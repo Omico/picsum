@@ -1,0 +1,158 @@
+versions:
+  androidx:
+    activity: "1.9.0"
+    compose:
+      bom: "2024.05.00"
+      compiler: "1.5.14"
+    core:
+      splashScreen: "1.2.0-alpha01"
+    lifecycle: "2.7.0"
+    paging: "3.3.0"
+    room: "2.6.1"
+  coil: "3.0.0-alpha06"
+  consensus: "0.9.0"
+  delusion: "0.8.1"
+  gradle: "8.7"
+  hilt: "2.51.1"
+  kotlin: "1.9.24"
+  kotlinx:
+    coroutines: "1.8.1"
+    serialization: "1.6.3"
+  ktor: "2.3.11"
+  okio: "3.9.0"
+  plugins:
+    android: "8.2.2"
+    cacheFix: "3.0.1"
+    develocity: "3.17.3"
+    ksp: "1.9.24-1.0.20"
+    spotless: "6.25.0"
+
+repositories:
+  google:
+  omico:
+  mavenCentral:
+  gradlePluginPortal:
+
+plugins:
+  google:
+    androidx.room: ${versions.androidx.room}
+  gradlePluginPortal:
+    com.diffplug.spotless: ${versions.plugins.spotless}
+    com.gradle.develocity: ${versions.plugins.develocity}
+    org.gradle.android.cache-fix: ${versions.plugins.cacheFix}
+    org.jetbrains.kotlin.plugin.serialization: ${versions.kotlin}
+  mavenCentral:
+    com.google.dagger.hilt.android: ${versions.hilt}
+    com.google.devtools.ksp: ${versions.plugins.ksp}
+  omico:
+    me.omico.consensus.api: ${versions.consensus}
+    me.omico.consensus.git: ${versions.consensus}
+    me.omico.consensus.spotless: ${versions.consensus}
+
+dependencies:
+  google:
+    androidx.activity:
+      activity-compose:
+        alias: androidx.activity.compose
+        version: ${versions.androidx.activity}
+    androidx.compose:
+      compose-bom:
+        alias: androidx.compose.bom
+        version: ${versions.androidx.compose.bom}
+        bom: true
+    androidx.compose.compiler:
+      compiler:
+        alias: androidx.compose.compiler
+        version: ${versions.androidx.compose.compiler}
+    androidx.compose.foundation:
+      foundation:
+        alias: androidx.compose.foundation
+        noSpecificVersion: true
+    androidx.compose.material3:
+      material3:
+        alias: androidx.compose.material3
+        noSpecificVersion: true
+    androidx.compose.ui:
+      ui-tooling:
+        alias: androidx.compose.ui.tooling
+        noSpecificVersion: true
+      ui-tooling-preview:
+        alias: androidx.compose.ui.tooling.preview
+        noSpecificVersion: true
+    androidx.core:
+      core-splashscreen:
+        alias: androidx.core.splashScreen
+        version: ${versions.androidx.core.splashScreen}
+    androidx.paging:
+      paging-compose:
+        alias: androidx.paging.compose
+        version: ${versions.androidx.paging}
+      paging-runtime:
+        alias: androidx.paging.runtime
+        version: ${versions.androidx.paging}
+    androidx.room:
+      room-compiler:
+        alias: androidx.room.compiler
+        version: ${versions.androidx.room}
+      room-ktx:
+        alias: androidx.room.ktx
+        version: ${versions.androidx.room}
+      room-paging:
+        alias: androidx.room.paging
+        version: ${versions.androidx.room}
+      room-runtime:
+        alias: androidx.room.runtime
+        version: ${versions.androidx.room}
+    com.android.tools.build:
+      gradle:
+        alias: androidGradlePlugin
+        version: ${versions.plugins.android}
+  mavenCentral:
+    com.google.dagger:
+      hilt-android:
+        alias: hilt.android
+        version: ${versions.hilt}
+      hilt-android-compiler:
+        alias: hilt.android.compiler
+        version: ${versions.hilt}
+    com.squareup.okio:
+      okio:
+        alias: okio
+        version: ${versions.okio}
+    io.coil-kt.coil3:
+      coil-compose:
+        alias: coil.compose
+        version: ${versions.coil}
+      coil-network-ktor:
+        alias: coil.network.ktor
+        version: ${versions.coil}
+    io.ktor:
+      ktor-client-content-negotiation:
+        alias: ktor.client.content.negotiation
+        version: ${versions.ktor}
+      ktor-client-okhttp:
+        alias: ktor.client.okhttp
+        version: ${versions.ktor}
+      ktor-serialization-kotlinx-json:
+        alias: ktor.serialization.kotlinx.json
+        version: ${versions.ktor}
+    org.jetbrains.kotlin:
+      kotlin-gradle-plugin:
+        alias: kotlinGradlePlugin
+        version: ${versions.kotlin}
+    org.jetbrains.kotlinx:
+      kotlinx-coroutines-android:
+        alias: kotlinx.coroutines.android
+        version: ${versions.kotlinx.coroutines}
+      kotlinx-serialization-json:
+        alias: kotlinx.serialization.json
+        version: ${versions.kotlinx.serialization}
+  omico:
+    me.omico.consensus:
+      consensus-dsl:
+        alias: me.omico.consensus.dsl
+        version: ${versions.consensus}
+    me.omico.delusion:
+      delusion-logger:
+        alias: delusion.logger
+        version: ${versions.delusion}

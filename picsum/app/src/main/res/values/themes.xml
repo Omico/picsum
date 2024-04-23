@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="NightAdjusted.Theme.Picsum" parent="android:Theme.Material.Light.NoActionBar" />
+
+    <style name="Theme.Picsum" parent="NightAdjusted.Theme.Picsum" />
+
+    <style name="NightAdjusted.Theme.Picsum.Splash" parent="Theme.SplashScreen">
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar">true</item>
+    </style>
+
+    <style name="Theme.Picsum.Splash" parent="NightAdjusted.Theme.Picsum.Splash">
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_splash</item>
+        <item name="postSplashScreenTheme">@style/Theme.Picsum</item>
+    </style>
+</resources>
