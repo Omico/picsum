@@ -21,9 +21,8 @@ internal object DatabaseModule {
     fun providesPicsumDatabase(
         @ApplicationContext context: Context,
     ): PicsumDatabase = Room
-        .databaseBuilder(
+        .databaseBuilder<PicsumDatabase>(
             context = context,
-            klass = PicsumDatabase::class.java,
             name = "picsum-database",
         )
         .build()
