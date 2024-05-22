@@ -3,7 +3,6 @@ versions:
     activity: "1.9.0"
     compose:
       bom: "2024.05.00"
-      compiler: "1.5.14"
     core:
       splashScreen: "1.2.0-alpha01"
     lifecycle: "2.7.0"
@@ -14,7 +13,7 @@ versions:
   delusion: "0.8.1"
   gradle: "8.7"
   hilt: "2.51.1"
-  kotlin: "1.9.24"
+  kotlin: "2.0.0"
   kotlinx:
     coroutines: "1.8.1"
     serialization: "1.6.3"
@@ -24,7 +23,7 @@ versions:
     android: "8.2.2"
     cacheFix: "3.0.1"
     develocity: "3.17.3"
-    ksp: "1.9.24-1.0.20"
+    ksp: "2.0.0-1.0.21"
     roommate: "0.2.0"
     spotless: "6.25.0"
 
@@ -41,6 +40,7 @@ plugins:
     com.diffplug.spotless: ${versions.plugins.spotless}
     com.gradle.develocity: ${versions.plugins.develocity}
     org.gradle.android.cache-fix: ${versions.plugins.cacheFix}
+    org.jetbrains.kotlin.plugin.compose: ${versions.kotlin}
     org.jetbrains.kotlin.plugin.serialization: ${versions.kotlin}
   mavenCentral:
     com.google.dagger.hilt.android: ${versions.hilt}
@@ -62,10 +62,6 @@ dependencies:
         alias: androidx.compose.bom
         version: ${versions.androidx.compose.bom}
         bom: true
-    androidx.compose.compiler:
-      compiler:
-        alias: androidx.compose.compiler
-        version: ${versions.androidx.compose.compiler}
     androidx.compose.foundation:
       foundation:
         alias: androidx.compose.foundation

@@ -15,4 +15,5 @@ dependencies {
     implementation(me.omico.consensus.git)
     implementation(me.omico.consensus.spotless)
     implementation(org.gradle.android.cacheFix)
+    implementation(org.jetbrains.kotlin.plugin.compose)
 }

@@ -1,15 +1,14 @@
+import me.omico.gradle.project.PROJECT_JAVA_VERSION
 import me.omico.gradle.project.configureCommonAndroidCompose
-import me.omico.gradm.Versions
 
 plugins {
     kotlin("android")
+    kotlin("plugin.compose")
     id("com.android.application")
     id("picsum.android.base")
 }
 
-configureCommonAndroidCompose(
-    jetpackComposeCompilerVersion = Versions.androidx.compose.compiler,
-)
+configureCommonAndroidCompose()
 
 android {
     defaultConfig {
@@ -20,6 +19,6 @@ android {
         buildConfig = true
     }
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = PROJECT_JAVA_VERSION.toString()
     }
 }

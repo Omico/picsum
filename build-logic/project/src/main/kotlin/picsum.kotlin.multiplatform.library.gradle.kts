@@ -1,3 +1,4 @@
+import me.omico.gradle.project.PROJECT_JAVA_VERSION
 import me.omico.gradle.project.createSourcePackageDirectories
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 
@@ -8,9 +9,9 @@ plugins {
 }
 
 kotlin {
-    androidTarget {
-        jvmToolchain(11)
-    }
+    jvmToolchain(PROJECT_JAVA_VERSION)
+
+    androidTarget()
 
     jvm("desktop")
 
