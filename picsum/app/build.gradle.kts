@@ -1,7 +1,6 @@
 plugins {
     id("picsum.android.application")
-    id("com.google.dagger.hilt.android")
-    id("com.google.devtools.ksp")
+    id("picsum.hilt")
 }
 
 android {
@@ -37,8 +36,6 @@ dependencies {
     implementation(coil.compose)
     implementation(coil.network.ktor)
     implementation(delusion.logger)
-    implementation(hilt.android)
     implementation(kotlinx.coroutines.android)
     debugImplementation(androidx.compose.ui.tooling)
-    ksp(hilt.android.compiler)
 }
