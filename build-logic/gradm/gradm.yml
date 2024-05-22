@@ -82,11 +82,11 @@ dependencies:
         alias: androidx.core.splashScreen
         version: ${versions.androidx.core.splashScreen}
     androidx.paging:
+      paging-common:
+        alias: androidx.paging.common
+        version: ${versions.androidx.paging}
       paging-compose:
         alias: androidx.paging.compose
-        version: ${versions.androidx.paging}
-      paging-runtime:
-        alias: androidx.paging.runtime
         version: ${versions.androidx.paging}
     androidx.room:
       room-compiler:

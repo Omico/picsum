@@ -12,7 +12,7 @@ kotlin {
                 implementation(project(":picsum-core-foundation"))
             }
             dependencies {
-                implementation(androidx.paging.runtime)
+                implementation(androidx.paging.common)
             }
         }
     }
