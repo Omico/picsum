@@ -12,14 +12,11 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  gradle-wrapper-validation:
-    name: Gradle Wrapper validation
-    uses: OmicoDev/gradle-project-initializer-template/.github/workflows/gradle-wrapper-validation.yml@main
-
   gradle-build:
     name: Gradle Build
     runs-on: ubuntu-latest
-    needs: gradle-wrapper-validation
+    env:
+      DEPENDENCY_GRAPH_EXCLUDE_PROJECTS: ':(gradm|initialization|project)'
     steps:
       - uses: actions/checkout@v4
         with:
@@ -34,6 +31,8 @@ jobs:
         uses: gradle/actions/setup-gradle@v3
         with:
           gradle-home-cache-cleanup: true
+          validate-wrappers: true
+          dependency-graph: generate-and-upload
 
       - run: ./gradlew build --no-daemon --stacktrace
 
