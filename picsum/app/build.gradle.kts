@@ -33,5 +33,5 @@ dependencies {
     implementation(androidx.paging.compose)
     implementation(delusion.logger)
     implementation(kotlinx.coroutines.android)
-    debugImplementation(androidx.compose.ui.tooling)
+    debugImplementation(compose.uiTooling)
 }

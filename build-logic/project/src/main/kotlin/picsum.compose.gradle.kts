@@ -2,6 +2,7 @@ import me.omico.gradle.project.configureCommonAndroid
 
 plugins {
     kotlin("plugin.compose")
+    id("org.jetbrains.compose")
 }
 
 composeCompiler {
