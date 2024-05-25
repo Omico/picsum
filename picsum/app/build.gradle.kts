@@ -27,14 +27,10 @@ androidComponents {
 
 dependencies {
     implementation(project(":picsum-core-data"))
+    implementation(project(":picsum-core-ui"))
     implementation(androidx.activity.compose)
-    implementation(androidx.compose.foundation)
-    implementation(androidx.compose.material3)
-    implementation(androidx.compose.ui.tooling.preview)
     implementation(androidx.core.splashScreen)
     implementation(androidx.paging.compose)
-    implementation(coil.compose)
-    implementation(coil.network.ktor)
     implementation(delusion.logger)
     implementation(kotlinx.coroutines.android)
     debugImplementation(androidx.compose.ui.tooling)

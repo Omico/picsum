@@ -34,12 +34,3 @@ internal fun Project.configureCommonAndroid(
     }
     dependencies.add("coreLibraryDesugaring", "com.android.tools:desugar_jdk_libs:$coreLibraryDesugaringVersion")
 }
-
-internal fun Project.configureCommonAndroidCompose() {
-    configureCommonAndroid {
-        buildFeatures {
-            compose = true
-        }
-    }
-    configureComposeCompiler()
-}

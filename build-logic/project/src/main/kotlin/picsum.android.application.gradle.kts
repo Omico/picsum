@@ -1,14 +1,11 @@
 import me.omico.gradle.project.PROJECT_JAVA_VERSION
-import me.omico.gradle.project.configureCommonAndroidCompose
 
 plugins {
     kotlin("android")
-    kotlin("plugin.compose")
     id("com.android.application")
     id("picsum.android.base")
+    id("picsum.compose")
 }
-
-configureCommonAndroidCompose()
 
 android {
     defaultConfig {
