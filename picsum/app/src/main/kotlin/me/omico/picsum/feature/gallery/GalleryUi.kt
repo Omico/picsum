@@ -6,15 +6,13 @@ package me.omico.picsum.feature.gallery
 import android.graphics.drawable.ColorDrawable
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.animateContentSize
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.defaultMinSize
+import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.lazy.staggeredgrid.LazyVerticalStaggeredGrid
 import androidx.compose.foundation.lazy.staggeredgrid.StaggeredGridCells
@@ -24,6 +22,9 @@ import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.derivedStateOf
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -37,6 +38,7 @@ import androidx.paging.compose.collectAsLazyPagingItems
 import androidx.paging.compose.itemKey
 import coil3.compose.AsyncImagePainter
 import coil3.compose.SubcomposeAsyncImage
+import coil3.compose.SubcomposeAsyncImageContent
 import coil3.request.ImageRequest
 import coil3.request.crossfade
 import coil3.request.placeholder
@@ -97,39 +99,36 @@ fun ImageItem(
         shape = RoundedCornerShape(size = 4.dp),
     ) {
         Box {
+            val context = LocalContext.current
+            val imageRequest = remember(image.downloadUrl) {
+                ImageRequest.Builder(context)
+                    .data(image.downloadUrl)
+                    .placeholder(ColorDrawable(Color.LightGray.toArgb()))
+                    .crossfade(true)
+                    .build()
+            }
+            val ratio by remember {
+                derivedStateOf { image.width.toFloat() / image.height.toFloat() }
+            }
             SubcomposeAsyncImage(
-                model = run {
-                    ImageRequest.Builder(LocalContext.current)
-                        .data(image.downloadUrl)
-                        .placeholder(ColorDrawable(Color.LightGray.toArgb()))
-                        .crossfade(true)
-                        .build()
-                },
+                model = imageRequest,
                 contentDescription = null,
-                modifier = run {
-                    Modifier
-                        .fillMaxWidth()
-                        .wrapContentHeight()
-                },
+                modifier = Modifier.aspectRatio(ratio = ratio),
                 contentScale = ContentScale.Crop,
             ) {
-                when (val state = painter.state) {
+                when (painter.state) {
                     is AsyncImagePainter.State.Empty,
                     is AsyncImagePainter.State.Loading,
                     is AsyncImagePainter.State.Error,
                     -> {
                         Box(
-                            modifier = Modifier.defaultMinSize(minWidth = 200.dp, minHeight = 120.dp),
                             contentAlignment = Alignment.Center,
                         ) {
                             CircularProgressIndicator()
                         }
                     }
                     is AsyncImagePainter.State.Success -> {
-                        Image(
-                            painter = state.painter,
-                            contentDescription = null,
-                        )
+                        SubcomposeAsyncImageContent()
                     }
                 }
             }
