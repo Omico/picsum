@@ -13,7 +13,7 @@ suspend fun PicsumService.list(page: Int, limit: Int = DEFAULT_LIMIT): PicsumIma
 
 @Serializable
 data class PicsumImage(
-    val id: String,
+    val id: Int,
     val author: String,
     val width: Int,
     val height: Int,

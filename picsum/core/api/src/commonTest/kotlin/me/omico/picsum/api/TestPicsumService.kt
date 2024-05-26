@@ -8,7 +8,7 @@ internal val testPicsumService: PicsumService = PicsumService()
 internal val picsumServiceFirstTwoResults: PicsumImages =
     listOf(
         PicsumImage(
-            id = "0",
+            id = 0,
             author = "Alejandro Escamilla",
             width = 5000,
             height = 3333,
@@ -16,7 +16,7 @@ internal val picsumServiceFirstTwoResults: PicsumImages =
             downloadUrl = "https://picsum.photos/id/0/5000/3333",
         ),
         PicsumImage(
-            id = "1",
+            id = 1,
             author = "Alejandro Escamilla",
             width = 5000,
             height = 3333,

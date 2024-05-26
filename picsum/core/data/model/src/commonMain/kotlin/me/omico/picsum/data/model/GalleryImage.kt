@@ -4,7 +4,7 @@
 package me.omico.picsum.data.model
 
 data class GalleryImage(
-    val id: String,
+    val id: Int,
     val author: String,
     val width: Int,
     val height: Int,
