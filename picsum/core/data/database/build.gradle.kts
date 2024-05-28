@@ -14,9 +14,7 @@ kotlin {
         }
         commonMain {
             dependencies {
-                implementation(androidx.room.ktx)
                 implementation(androidx.room.paging)
-                implementation(androidx.room.runtime)
             }
         }
     }

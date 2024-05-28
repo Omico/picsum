@@ -89,17 +89,8 @@ dependencies:
         alias: androidx.paging.compose
         version: ${versions.androidx.paging}
     androidx.room:
-      room-compiler:
-        alias: androidx.room.compiler
-        version: ${versions.androidx.room}
-      room-ktx:
-        alias: androidx.room.ktx
-        version: ${versions.androidx.room}
       room-paging:
         alias: androidx.room.paging
-        version: ${versions.androidx.room}
-      room-runtime:
-        alias: androidx.room.runtime
         version: ${versions.androidx.room}
     com.android.tools.build:
       gradle:
