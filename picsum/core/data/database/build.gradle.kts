@@ -12,11 +12,6 @@ kotlin {
                 implementation(project(":picsum-core-foundation"))
             }
         }
-        commonMain {
-            dependencies {
-                implementation(androidx.room.paging)
-            }
-        }
     }
 }
 
@@ -26,6 +21,12 @@ room {
 
 roommate {
     roomVersion(versions.androidx.room)
-    withKsp("android", "desktop")
-    applySqliteBundleTo("desktopMainImplementation")
+    dependencies {
+        commonMainImplementation(roomPaging)
+        desktopMainImplementation(sqliteBundle)
+    }
+    dependencies {
+        kspAndroid(roomCompiler)
+        kspDesktop(roomCompiler)
+    }
 }
