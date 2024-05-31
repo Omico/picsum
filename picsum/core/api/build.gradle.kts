@@ -12,8 +12,13 @@ kotlin {
             dependencies {
                 implementation(kotlinx.serialization.json)
                 implementation(ktor.client.content.negotiation)
-                implementation(ktor.client.okhttp)
                 implementation(ktor.serialization.kotlinx.json)
+            }
+        }
+
+        jvmMain {
+            dependencies {
+                implementation(ktor.client.okhttp)
             }
         }
     }

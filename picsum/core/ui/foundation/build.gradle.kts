@@ -11,11 +11,16 @@ kotlin {
             dependencies {
                 api(androidx.compose.foundation)
                 api(androidx.compose.material3)
-                api(androidx.compose.ui.tooling.preview)
                 api(coil.compose)
             }
             dependencies {
                 implementation(coil.network.ktor)
+            }
+        }
+
+        jvmMain {
+            dependencies {
+                api(androidx.compose.ui.tooling.preview)
             }
         }
     }

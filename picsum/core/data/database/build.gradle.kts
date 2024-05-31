@@ -11,6 +11,9 @@ kotlin {
             dependencies {
                 implementation(project(":picsum-core-foundation"))
             }
+            dependencies {
+                implementation(androidx.paging.common)
+            }
         }
     }
 }
