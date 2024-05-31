@@ -4,6 +4,7 @@ import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 
 plugins {
     kotlin("multiplatform")
+    kotlin("native.cocoapods")
     id("com.android.library")
     id("picsum.android.base")
 }
@@ -14,6 +15,16 @@ kotlin {
     androidTarget()
 
     jvm("desktop")
+
+    iosArm64()
+    iosSimulatorArm64()
+
+    cocoapods {
+        podfile = rootProject.file("picsum/ios/Podfile")
+        summary = "Picsum Kotlin Multiplatform Library"
+        homepage = "https://github.com/Omico/picsum"
+        ios.deploymentTarget = "15"
+    }
 
     @OptIn(ExperimentalKotlinGradlePluginApi::class)
     compilerOptions {

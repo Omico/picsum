@@ -1,0 +1,6 @@
+Podfile.lock
+Pods/*
+picsum.xcodeproj/*
+picsum.xcworkspace/*
+
+!picsum.xcodeproj/project.pbxproj

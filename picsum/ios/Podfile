@@ -1,0 +1,7 @@
+target 'picsum' do
+  use_frameworks!
+  pod 'picsum_core_api', :path => '../core/api'
+  pod 'picsum_core_data', :path => '../core/data'
+  pod 'picsum_core_foundation', :path => '../core/foundation'
+  pod 'picsum_core_ui', :path => '../core/ui'
+end

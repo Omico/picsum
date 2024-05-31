@@ -31,5 +31,7 @@ roommate {
     dependencies {
         kspAndroid(roomCompiler)
         kspDesktop(roomCompiler)
+        kspIosArm64(roomCompiler)
+        kspIosSimulatorArm64(roomCompiler)
     }
 }
