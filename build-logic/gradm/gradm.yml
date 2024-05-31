@@ -7,7 +7,7 @@ versions:
       splashScreen: "1.2.0-alpha01"
     lifecycle: "2.7.0"
     paging: "3.3.0"
-    room: "2.7.0-alpha02"
+    room: "2.7.0-alpha03"
   coil: "3.0.0-alpha06"
   consensus: "0.9.0"
   delusion: "0.8.1"
