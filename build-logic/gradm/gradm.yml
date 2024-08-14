@@ -1,29 +1,29 @@
 versions:
   androidx:
-    activity: "1.9.0"
+    activity: "1.9.1"
     compose:
-      bom: "2024.05.00"
+      bom: "2024.06.00"
     core:
       splashScreen: "1.2.0-alpha01"
     lifecycle: "2.7.0"
-    paging: "3.3.0"
-    room: "2.7.0-alpha03"
+    paging: "3.3.2"
+    room: "2.7.0-alpha06"
   coil: "3.0.0-alpha10"
   consensus: "0.14.0"
-  delusion: "0.8.1"
+  delusion: "0.9.0"
   gradle: "8.9"
-  hilt: "2.51.1"
-  kotlin: "2.0.0"
+  hilt: "2.52"
+  kotlin: "2.0.10"
   kotlinx:
     coroutines: "1.8.1"
-    serialization: "1.6.3"
-  ktor: "2.3.11"
+    serialization: "1.7.1"
+  ktor: "2.3.12"
   okio: "3.9.0"
   plugins:
     android: "8.5.2"
     cacheFix: "3.0.1"
     develocity: "3.17.6"
-    ksp: "2.0.0-1.0.21"
+    ksp: "2.0.10-1.0.24"
     roommate: "0.3.0"
     spotless: "7.0.0.BETA1"
 
