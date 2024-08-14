@@ -24,6 +24,7 @@ kotlin {
 
         desktopMain {
             dependencies {
+                api(compose.desktop.currentOs) { exclude(group = "org.jetbrains.compose.material") }
                 api(compose.preview)
             }
         }

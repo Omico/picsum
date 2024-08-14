@@ -93,6 +93,9 @@ dependencies:
       kotlinx-coroutines-core:
         alias: kotlinx.coroutines.core
         version: ${versions.kotlinx.coroutines}
+      kotlinx-coroutines-swing:
+        alias: kotlinx.coroutines.swing
+        version: ${versions.kotlinx.coroutines}
   omico:
     me.omico.consensus:
       consensus-gradle-plugins:
