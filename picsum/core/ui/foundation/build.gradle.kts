@@ -9,8 +9,7 @@ kotlin {
                 implementation(project(":picsum-core-foundation"))
             }
             dependencies {
-                api(androidx.compose.foundation)
-                api(androidx.compose.material3)
+                api(compose.material3)
                 api(coil.compose)
             }
             dependencies {
@@ -20,7 +19,7 @@ kotlin {
 
         jvmMain {
             dependencies {
-                api(androidx.compose.ui.tooling.preview)
+                api(compose.preview)
             }
         }
     }

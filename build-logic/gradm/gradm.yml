@@ -9,6 +9,7 @@ versions:
     paging: "3.3.2"
     room: "2.7.0-alpha06"
   coil: "3.0.0-alpha10"
+  compose.multiplatform: "1.7.0-dev1756"
   consensus: "0.14.0"
   delusion: "0.9.0"
   gradle: "8.9"
@@ -28,6 +29,8 @@ versions:
     spotless: "7.0.0.BETA1"
 
 repositories:
+  jetbrainsCompose:
+    url: "https://maven.pkg.jetbrains.space/public/p/compose/dev"
   google:
   omico:
   mavenCentral:
@@ -40,6 +43,7 @@ plugins:
     com.diffplug.spotless: ${versions.plugins.spotless}
     com.gradle.develocity: ${versions.plugins.develocity}
     org.gradle.android.cache-fix: ${versions.plugins.cacheFix}
+    org.jetbrains.compose: ${versions.compose.multiplatform}
     org.jetbrains.kotlin.plugin.compose: ${versions.kotlin}
     org.jetbrains.kotlin.plugin.serialization: ${versions.kotlin}
   mavenCentral:
@@ -54,26 +58,6 @@ dependencies:
       activity-compose:
         alias: androidx.activity.compose
         version: ${versions.androidx.activity}
-    androidx.compose:
-      compose-bom:
-        alias: androidx.compose.bom
-        version: ${versions.androidx.compose.bom}
-        bom: true
-    androidx.compose.foundation:
-      foundation:
-        alias: androidx.compose.foundation
-        noSpecificVersion: true
-    androidx.compose.material3:
-      material3:
-        alias: androidx.compose.material3
-        noSpecificVersion: true
-    androidx.compose.ui:
-      ui-tooling:
-        alias: androidx.compose.ui.tooling
-        noSpecificVersion: true
-      ui-tooling-preview:
-        alias: androidx.compose.ui.tooling.preview
-        noSpecificVersion: true
     androidx.core:
       core-splashscreen:
         alias: androidx.core.splashScreen
