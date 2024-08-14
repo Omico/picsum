@@ -20,7 +20,7 @@ versions:
   ktor: "2.3.11"
   okio: "3.9.0"
   plugins:
-    android: "8.2.2"
+    android: "8.5.2"
     cacheFix: "3.0.1"
     develocity: "3.17.6"
     ksp: "2.0.0-1.0.21"
