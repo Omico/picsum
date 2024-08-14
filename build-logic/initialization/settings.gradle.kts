@@ -1,4 +1,4 @@
-rootProject.name = "picsum-initialization"
+rootProject.name = "picsum-build-logic-initialization"
 
 pluginManagement {
     includeBuild("../gradm")

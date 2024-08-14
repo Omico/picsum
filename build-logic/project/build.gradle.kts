@@ -10,10 +10,7 @@ dependencies {
     implementation(com.google.devtools.ksp)
     implementation(gradmGeneratedJar)
     implementation(kotlinGradlePlugin)
-    implementation(me.omico.consensus.api)
-    implementation(me.omico.consensus.dsl)
-    implementation(me.omico.consensus.git)
-    implementation(me.omico.consensus.spotless)
+    implementation(consensusGradlePlugins)
     implementation(org.gradle.android.cacheFix)
     implementation(org.jetbrains.kotlin.plugin.compose)
 }
