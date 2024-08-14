@@ -22,6 +22,7 @@ import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
@@ -116,7 +117,8 @@ fun ImageItem(
                 modifier = Modifier.aspectRatio(ratio = ratio),
                 contentScale = ContentScale.Crop,
             ) {
-                when (painter.state) {
+                val state by painter.state.collectAsState()
+                when (state) {
                     is AsyncImagePainter.State.Empty,
                     is AsyncImagePainter.State.Loading,
                     is AsyncImagePainter.State.Error,

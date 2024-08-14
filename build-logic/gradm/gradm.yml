@@ -8,7 +8,7 @@ versions:
     lifecycle: "2.7.0"
     paging: "3.3.0"
     room: "2.7.0-alpha03"
-  coil: "3.0.0-alpha06"
+  coil: "3.0.0-alpha10"
   consensus: "0.14.0"
   delusion: "0.8.1"
   gradle: "8.9"
@@ -109,7 +109,7 @@ dependencies:
       coil-compose:
         alias: coil.compose
         version: ${versions.coil}
-      coil-network-ktor:
+      coil-network-ktor2:
         alias: coil.network.ktor
         version: ${versions.coil}
     io.ktor:
