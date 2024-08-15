@@ -26,8 +26,7 @@ androidComponents {
 }
 
 dependencies {
-    implementation(project(":picsum-core-data"))
-    implementation(project(":picsum-core-ui"))
+    implementation(project(":picsum-core-application"))
     implementation(androidx.activity.compose)
     implementation(androidx.core.splashScreen)
     implementation(androidx.paging.compose)
