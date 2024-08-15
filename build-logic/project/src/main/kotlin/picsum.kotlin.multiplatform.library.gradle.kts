@@ -31,6 +31,12 @@ kotlin {
     }
 
     sourceSets {
+        all {
+            languageSettings {
+                enableLanguageFeature("ExpectActualClasses") // TODO KT-61573
+            }
+        }
+
         commonTest {
             dependencies {
                 implementation(kotlin("test"))

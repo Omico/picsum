@@ -11,7 +11,6 @@ import me.omico.picsum.data.database.entity.Image
 import me.omico.picsum.data.datasource.GalleryDataSource
 import me.omico.picsum.data.paging.ImagesRemoteMediator
 
-@Suppress("EXPECT_ACTUAL_CLASSIFIERS_ARE_IN_BETA_WARNING") // TODO KT-61573
 internal actual class GalleryDataSourceImpl(
     private val imagesRemoteMediator: ImagesRemoteMediator,
     private val imageDao: ImageDao,
