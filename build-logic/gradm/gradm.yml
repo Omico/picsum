@@ -14,7 +14,7 @@ versions:
   delusion: "0.9.0"
   gradle: "8.9"
   hilt: "2.52"
-  kotlin: "2.0.10"
+  kotlin: "2.0.20"
   kotlinx:
     coroutines: "1.8.1"
     serialization: "1.7.1"
@@ -24,7 +24,7 @@ versions:
     android: "8.5.2"
     cacheFix: "3.0.1"
     develocity: "3.17.6"
-    ksp: "2.0.10-1.0.24"
+    ksp: "2.0.20-1.0.24"
     roommate: "0.3.0"
     spotless: "7.0.0.BETA1"
 
