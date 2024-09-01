@@ -16,7 +16,7 @@ kotlin {
             }
         }
 
-        jvmMain {
+        jvmCommonMain {
             dependencies {
                 implementation(ktor.client.okhttp)
             }

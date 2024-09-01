@@ -17,7 +17,7 @@ kotlin {
             }
         }
 
-        jvmMain {
+        desktopMain {
             dependencies {
                 api(compose.preview)
             }
