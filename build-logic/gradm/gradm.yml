@@ -1,8 +1,6 @@
 versions:
   androidx:
     activity: "1.9.1"
-    compose:
-      bom: "2024.06.00"
     core:
       splashScreen: "1.2.0-alpha01"
     lifecycle: "2.7.0"
@@ -69,10 +67,6 @@ dependencies:
       paging-compose:
         alias: androidx.paging.compose
         version: ${versions.androidx.paging}
-    androidx.room:
-      room-paging:
-        alias: androidx.room.paging
-        version: ${versions.androidx.room}
     com.android.tools.build:
       gradle:
         alias: androidGradlePlugin
