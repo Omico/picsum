@@ -23,7 +23,7 @@ versions:
     cacheFix: "3.0.1"
     develocity: "3.18"
     ksp: "2.0.20-1.0.24"
-    roommate: "0.3.0"
+    roommate: "0.4.0"
     spotless: "7.0.0.BETA1"
 
 repositories:

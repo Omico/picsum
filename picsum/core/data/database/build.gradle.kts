@@ -24,12 +24,9 @@ room {
 
 roommate {
     roomVersion(versions.androidx.room)
+    withKspRoomCompiler()
     dependencies {
         commonMainImplementation(roomPaging)
         desktopMainImplementation(sqliteBundle)
-    }
-    dependencies {
-        kspAndroid(roomCompiler)
-        kspDesktop(roomCompiler)
     }
 }
