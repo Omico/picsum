@@ -1,8 +1,21 @@
+import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
+
 plugins {
-    id("picsum.kotlin.multiplatform.library")
+    id("picsum.compose.multiplatform.library")
 }
 
 kotlin {
+    targets.withType<KotlinNativeTarget>().configureEach {
+        if (name.startsWith("ios").not()) return@configureEach
+        binaries {
+            framework {
+                baseName = "PicsumKt"
+                isStatic = true
+                binaryOption("bundleId", "me.omico.picsum.kmp")
+            }
+        }
+    }
+
     sourceSets {
         commonMain {
             dependencies {
