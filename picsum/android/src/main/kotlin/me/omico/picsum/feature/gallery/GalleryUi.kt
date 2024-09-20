@@ -9,13 +9,18 @@ import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.systemBars
+import androidx.compose.foundation.layout.windowInsetsBottomHeight
+import androidx.compose.foundation.layout.windowInsetsTopHeight
 import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.lazy.staggeredgrid.LazyVerticalStaggeredGrid
 import androidx.compose.foundation.lazy.staggeredgrid.StaggeredGridCells
+import androidx.compose.foundation.lazy.staggeredgrid.StaggeredGridItemSpan
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CircularProgressIndicator
@@ -52,40 +57,47 @@ fun GalleryUi(
     modifier: Modifier = Modifier,
 ) {
     val lazyPagingItems = imagePagingDataFlow.collectAsLazyPagingItems()
-    Column(modifier = modifier) {
-        AnimatedVisibility(visible = lazyPagingItems.loadState.refresh == LoadState.Loading) {
-            Text(
-                text = "Loading...",
-                modifier = run {
-                    Modifier
-                        .fillMaxWidth()
-                        .wrapContentWidth(align = Alignment.CenterHorizontally)
-                },
-            )
+    LazyVerticalStaggeredGrid(
+        columns = StaggeredGridCells.Adaptive(minSize = 200.dp),
+        modifier = modifier,
+        verticalItemSpacing = 4.dp,
+        horizontalArrangement = Arrangement.spacedBy(space = 4.dp),
+    ) {
+        item(span = StaggeredGridItemSpan.FullLine) {
+            Spacer(modifier = Modifier.windowInsetsTopHeight(WindowInsets.systemBars))
         }
-        LazyVerticalStaggeredGrid(
-            columns = StaggeredGridCells.Adaptive(minSize = 200.dp),
-            modifier = modifier,
-            verticalItemSpacing = 4.dp,
-            horizontalArrangement = Arrangement.spacedBy(space = 4.dp),
-        ) {
-            items(
-                count = lazyPagingItems.itemCount,
-                key = lazyPagingItems.itemKey(key = Image::id),
-            ) { index ->
-                ImageItem(
-                    image = lazyPagingItems[index] ?: return@items,
-                    modifier = Modifier.animateContentSize(),
+        item(span = StaggeredGridItemSpan.FullLine) {
+            AnimatedVisibility(visible = lazyPagingItems.loadState.refresh == LoadState.Loading) {
+                Text(
+                    text = "Loading...",
+                    modifier = run {
+                        Modifier
+                            .fillMaxWidth()
+                            .wrapContentWidth(align = Alignment.CenterHorizontally)
+                    },
                 )
             }
         }
-        AnimatedVisibility(visible = lazyPagingItems.loadState.append == LoadState.Loading) {
-            Box(
-                modifier = Modifier.fillMaxWidth(),
-                contentAlignment = Alignment.Center,
-            ) {
-                CircularProgressIndicator()
+        items(
+            count = lazyPagingItems.itemCount,
+            key = lazyPagingItems.itemKey(key = Image::id),
+        ) { index ->
+            ImageItem(
+                image = lazyPagingItems[index] ?: return@items,
+                modifier = Modifier.animateContentSize(),
+            )
+        }
+        item(span = StaggeredGridItemSpan.FullLine) {
+            AnimatedVisibility(visible = lazyPagingItems.loadState.append == LoadState.Loading) {
+                Box(
+                    modifier = Modifier.fillMaxWidth(),
+                    contentAlignment = Alignment.Center,
+                    content = { CircularProgressIndicator() },
+                )
             }
+        }
+        item(span = StaggeredGridItemSpan.FullLine) {
+            Spacer(modifier = Modifier.windowInsetsBottomHeight(WindowInsets.systemBars))
         }
     }
 }

@@ -4,7 +4,6 @@
 package me.omico.picsum.ui
 
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.safeContentPadding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -22,11 +21,7 @@ fun PicsumContainer(
         SetupCoil()
         GalleryUi(
             imagePagingDataFlow = imagePagingDataFlow,
-            modifier = run {
-                Modifier
-                    .fillMaxSize()
-                    .safeContentPadding()
-            },
+            modifier = Modifier.fillMaxSize(),
         )
     }
 }
