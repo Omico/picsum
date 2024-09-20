@@ -80,6 +80,9 @@ dependencies:
       ktor-client-content-negotiation:
         alias: ktor.client.content.negotiation
         version: ${versions.ktor}
+      ktor-client-darwin:
+        alias: ktor.client.darwin
+        version: ${versions.ktor}
       ktor-client-okhttp:
         alias: ktor.client.okhttp
         version: ${versions.ktor}
