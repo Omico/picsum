@@ -13,10 +13,13 @@
 *.json text diff=json
 *.kt text diff=kotlin
 *.md text diff=markdown
+*.pbxproj text
+*.plist text
 *.properties text
 *.rs text diff=rust
 *.scala text diff=java
 *.svg text
+*.swift text diff=swift
 *.template text
 *.toml text diff=toml
 *.txt text
