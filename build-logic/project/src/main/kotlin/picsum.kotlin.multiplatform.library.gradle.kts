@@ -11,6 +11,9 @@ kotlin {
 
     jvm("desktop")
 
+    iosArm64()
+    iosSimulatorArm64()
+
     @OptIn(ExperimentalKotlinGradlePluginApi::class)
     applyDefaultHierarchyTemplate {
         common {

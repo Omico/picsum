@@ -9,8 +9,11 @@
 *.json text diff=json
 *.kt text diff=kotlin
 *.md text diff=markdown
+*.pbxproj text
+*.plist text
 *.properties text
 *.scala text diff=java
+*.swift text diff=swift
 *.xml text
 *.yml text
 .gitattributes text
