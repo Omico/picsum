@@ -30,5 +30,11 @@ kotlin {
                 implementation(ktor.client.okhttp)
             }
         }
+
+        appleMain {
+            dependencies {
+                implementation(ktor.client.darwin)
+            }
+        }
     }
 }

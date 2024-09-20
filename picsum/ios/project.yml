@@ -1,0 +1,47 @@
+name: Picsum
+
+options:
+  deploymentTarget:
+    iOS: "18.0"
+  xcodeVersion: "16.0"
+  compatibilityVersion: "Xcode 16.0"
+  createIntermediateGroups: true
+  bundleIdPrefix: me.omico
+
+settings:
+  base:
+    SWIFT_VERSION: 6.0
+
+targets:
+  Picsum:
+    type: application
+    platform: iOS
+    sources:
+      - path: Picsum
+    settings:
+      base:
+        DEVELOPMENT_TEAM: "${TEAM_ID}"
+        ENABLE_PREVIEWS: YES
+        ENABLE_USER_SCRIPT_SANDBOXING: NO
+        FRAMEWORK_SEARCH_PATHS:
+          - "$(inherited)"
+          - "$(SRCROOT)/../core/application/build/xcode-frameworks/$(CONFIGURATION)/$(SDK_NAME)"
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_CFBundleDisplayName: Picsum
+        INFOPLIST_KEY_UIApplicationSceneManifest_Generation: YES
+        INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents: YES
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad: "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone: "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
+        IPHONEOS_DEPLOYMENT_TARGET: 18.0
+    prebuildScripts:
+      - name: Compile Kotlin Framework
+        shell: /bin/sh
+        script: |
+          if [ "YES" = "$OVERRIDE_KOTLIN_BUILD_IDE_SUPPORTED" ]; then
+            echo "Skipping Gradle build task invocation due to OVERRIDE_KOTLIN_BUILD_IDE_SUPPORTED environment variable set to \"YES\""
+            exit 0
+          fi
+          cd "$SRCROOT/../.." || exit 1
+          ./gradlew :picsum-core-application:embedAndSignAppleFrameworkForXcode --no-configuration-cache
+        basedOnDependencyAnalysis: false
