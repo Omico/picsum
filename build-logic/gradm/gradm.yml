@@ -16,7 +16,7 @@ versions:
   kotlinx:
     coroutines: "1.9.0"
     serialization: "1.7.3"
-  ktor: "2.3.12"
+  ktor: "3.0.0-rc-1"
   okio: "3.9.1"
   plugins:
     android: "8.5.2"
@@ -87,7 +87,7 @@ dependencies:
       coil-compose:
         alias: coil.compose
         version: ${versions.coil}
-      coil-network-ktor2:
+      coil-network-ktor3:
         alias: coil.network.ktor
         version: ${versions.coil}
     io.ktor:
