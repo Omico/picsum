@@ -27,6 +27,8 @@ kotlin {
             }
         }
 
-        createSourcePackageDirectories(project)
+        if (!path.startsWith(":picsum-androidx-")) {
+            createSourcePackageDirectories(project)
+        }
     }
 }

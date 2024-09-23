@@ -6,6 +6,10 @@ kotlin {
     sourceSets {
         commonMain {
             dependencies {
+                api(project(":picsum-androidx-paging-compose"))
+            }
+            dependencies {
+                api(project(":picsum-androidx-paging-compose"))
                 implementation(project(":picsum-core-foundation"))
             }
             dependencies {

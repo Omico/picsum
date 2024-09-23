@@ -29,7 +29,6 @@ dependencies {
     implementation(project(":picsum-core-application"))
     implementation(androidx.activity.compose)
     implementation(androidx.core.splashScreen)
-    implementation(androidx.paging.compose)
     implementation(delusion.logger)
     implementation(kotlinx.coroutines.android)
     debugImplementation(compose.uiTooling)
