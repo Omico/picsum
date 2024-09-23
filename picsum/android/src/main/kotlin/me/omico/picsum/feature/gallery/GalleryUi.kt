@@ -3,7 +3,6 @@
  */
 package me.omico.picsum.feature.gallery
 
-import android.graphics.drawable.ColorDrawable
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.background
@@ -28,13 +27,10 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
@@ -47,7 +43,6 @@ import coil3.compose.SubcomposeAsyncImage
 import coil3.compose.SubcomposeAsyncImageContent
 import coil3.request.ImageRequest
 import coil3.request.crossfade
-import coil3.request.placeholder
 import kotlinx.coroutines.flow.Flow
 import me.omico.picsum.data.database.entity.Image
 
@@ -116,13 +111,10 @@ fun ImageItem(
             val imageRequest = remember(image.downloadUrl) {
                 ImageRequest.Builder(context)
                     .data(image.downloadUrl)
-                    .placeholder(ColorDrawable(Color.LightGray.toArgb()))
                     .crossfade(true)
                     .build()
             }
-            val ratio by remember {
-                derivedStateOf { image.width.toFloat() / image.height.toFloat() }
-            }
+            val ratio = remember(image.width, image.height) { image.width.toFloat() / image.height.toFloat() }
             SubcomposeAsyncImage(
                 model = imageRequest,
                 contentDescription = null,
