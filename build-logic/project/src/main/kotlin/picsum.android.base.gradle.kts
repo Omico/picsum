@@ -8,6 +8,6 @@ plugins {
 // Android 11+
 configureCommonAndroid(
     domain = "me.omico",
-    compileSdk = 34,
+    compileSdk = 35,
     minSdk = 30,
 )
