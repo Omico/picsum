@@ -32,13 +32,13 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.paging.LoadState
 import androidx.paging.PagingData
 import androidx.paging.compose.collectAsLazyPagingItems
 import androidx.paging.compose.itemKey
 import coil3.compose.AsyncImagePainter
+import coil3.compose.LocalPlatformContext
 import coil3.compose.SubcomposeAsyncImage
 import coil3.compose.SubcomposeAsyncImageContent
 import coil3.request.ImageRequest
@@ -107,7 +107,7 @@ fun ImageItem(
         shape = RoundedCornerShape(size = 4.dp),
     ) {
         Box {
-            val context = LocalContext.current
+            val context = LocalPlatformContext.current
             val imageRequest = remember(image.downloadUrl) {
                 ImageRequest.Builder(context)
                     .data(image.downloadUrl)
