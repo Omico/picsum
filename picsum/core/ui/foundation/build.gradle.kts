@@ -13,6 +13,7 @@ kotlin {
                 implementation(project(":picsum-core-foundation"))
             }
             dependencies {
+                api(androidx.lifecycle.viewmodel)
                 api(compose.material3)
                 api(coil.compose)
             }
