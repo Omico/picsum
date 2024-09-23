@@ -25,7 +25,7 @@ class ImagesRemoteMediator(
                 LoadType.PREPEND -> return MediatorResult.Success(endOfPaginationReached = true)
                 LoadType.APPEND ->
                     state.lastItemOrNull()
-                        ?.let { (it.id.toInt() + 1) / state.config.pageSize + 1 }
+                        ?.let { image -> (image.id + 1) / state.config.pageSize + 1 }
                         ?: return MediatorResult.Success(endOfPaginationReached = false)
             }
             val picsumImages = picsumService.list(
