@@ -23,7 +23,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             PicsumContainer(
-                lazyPagingGalleryImages = viewModel.galleryImagePagingDataFlow.collectAsLazyPagingItems(),
+                lazyPagingGalleryImages = viewModel.galleryImagePagingDataFlow().collectAsLazyPagingItems(),
             )
         }
     }

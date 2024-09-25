@@ -15,10 +15,10 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
-    galleryDataSource: GalleryDataSource,
+    private val galleryDataSource: GalleryDataSource,
 ) : ViewModel() {
-    val galleryImagePagingDataFlow: Flow<PagingData<GalleryImage>> =
-        galleryDataSource.imagePagingDataFlow(DEFAULT_PAGE_SIZE).cachedIn(viewModelScope)
+    fun galleryImagePagingDataFlow(pageSize: Int = DEFAULT_PAGE_SIZE): Flow<PagingData<GalleryImage>> =
+        galleryDataSource.imagePagingDataFlow(pageSize).cachedIn(viewModelScope)
 }
 
 private const val DEFAULT_PAGE_SIZE: Int = 10
