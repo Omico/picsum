@@ -3,9 +3,10 @@
  */
 package me.omico.picsum.data.datasource
 
-import androidx.paging.Pager
-import me.omico.picsum.data.database.entity.Image
+import androidx.paging.PagingData
+import kotlinx.coroutines.flow.Flow
+import me.omico.picsum.data.model.GalleryImage
 
 interface GalleryDataSource {
-    fun imagePager(pageSize: Int): Pager<Int, Image>
+    fun imagePagingDataFlow(pageSize: Int): Flow<PagingData<GalleryImage>>
 }

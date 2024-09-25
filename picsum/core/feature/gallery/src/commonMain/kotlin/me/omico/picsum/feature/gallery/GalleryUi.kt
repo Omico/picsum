@@ -34,8 +34,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import androidx.paging.LoadState
-import androidx.paging.PagingData
-import androidx.paging.compose.collectAsLazyPagingItems
+import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.itemKey
 import coil3.compose.AsyncImagePainter
 import coil3.compose.LocalPlatformContext
@@ -43,15 +42,13 @@ import coil3.compose.SubcomposeAsyncImage
 import coil3.compose.SubcomposeAsyncImageContent
 import coil3.request.ImageRequest
 import coil3.request.crossfade
-import kotlinx.coroutines.flow.Flow
-import me.omico.picsum.data.database.entity.Image
+import me.omico.picsum.data.model.GalleryImage
 
 @Composable
 fun GalleryUi(
-    imagePagingDataFlow: Flow<PagingData<Image>>,
+    lazyPagingGalleryImages: LazyPagingItems<GalleryImage>,
     modifier: Modifier = Modifier,
 ) {
-    val lazyPagingItems = imagePagingDataFlow.collectAsLazyPagingItems()
     LazyVerticalStaggeredGrid(
         columns = StaggeredGridCells.Adaptive(minSize = 200.dp),
         modifier = modifier,
@@ -62,7 +59,7 @@ fun GalleryUi(
             Spacer(modifier = Modifier.windowInsetsTopHeight(WindowInsets.systemBars))
         }
         item(span = StaggeredGridItemSpan.FullLine) {
-            AnimatedVisibility(visible = lazyPagingItems.loadState.refresh == LoadState.Loading) {
+            AnimatedVisibility(visible = lazyPagingGalleryImages.loadState.refresh == LoadState.Loading) {
                 Text(
                     text = "Loading...",
                     modifier = run {
@@ -74,16 +71,16 @@ fun GalleryUi(
             }
         }
         items(
-            count = lazyPagingItems.itemCount,
-            key = lazyPagingItems.itemKey(key = Image::id),
+            count = lazyPagingGalleryImages.itemCount,
+            key = lazyPagingGalleryImages.itemKey(key = GalleryImage::id),
         ) { index ->
-            ImageItem(
-                image = lazyPagingItems[index] ?: return@items,
+            GalleryImageItem(
+                image = lazyPagingGalleryImages[index] ?: return@items,
                 modifier = Modifier.animateContentSize(),
             )
         }
         item(span = StaggeredGridItemSpan.FullLine) {
-            AnimatedVisibility(visible = lazyPagingItems.loadState.append == LoadState.Loading) {
+            AnimatedVisibility(visible = lazyPagingGalleryImages.loadState.append == LoadState.Loading) {
                 Box(
                     modifier = Modifier.fillMaxWidth(),
                     contentAlignment = Alignment.Center,
@@ -98,8 +95,8 @@ fun GalleryUi(
 }
 
 @Composable
-fun ImageItem(
-    image: Image,
+fun GalleryImageItem(
+    image: GalleryImage,
     modifier: Modifier = Modifier,
 ) {
     Card(

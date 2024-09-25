@@ -9,16 +9,16 @@ import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
-import me.omico.picsum.data.database.entity.Image
 import me.omico.picsum.data.datasource.GalleryDataSource
+import me.omico.picsum.data.model.GalleryImage
 import javax.inject.Inject
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
     galleryDataSource: GalleryDataSource,
 ) : ViewModel() {
-    val imagePagingDataFlow: Flow<PagingData<Image>> =
-        galleryDataSource.imagePager(DEFAULT_PAGE_SIZE).flow.cachedIn(viewModelScope)
+    val galleryImagePagingDataFlow: Flow<PagingData<GalleryImage>> =
+        galleryDataSource.imagePagingDataFlow(DEFAULT_PAGE_SIZE).cachedIn(viewModelScope)
 }
 
 private const val DEFAULT_PAGE_SIZE: Int = 10

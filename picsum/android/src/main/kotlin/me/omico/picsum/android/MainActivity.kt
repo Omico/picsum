@@ -9,6 +9,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.paging.compose.collectAsLazyPagingItems
 import dagger.hilt.android.AndroidEntryPoint
 import me.omico.picsum.ui.PicsumContainer
 
@@ -22,7 +23,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             PicsumContainer(
-                imagePagingDataFlow = viewModel.imagePagingDataFlow,
+                lazyPagingGalleryImages = viewModel.galleryImagePagingDataFlow.collectAsLazyPagingItems(),
             )
         }
     }
