@@ -10,7 +10,7 @@ versions:
   compose.multiplatform: "1.7.0-dev1809"
   consensus: "0.15.0"
   delusion: "0.9.0"
-  gradle: "8.10.1"
+  gradle: "8.10.2"
   hilt: "2.52"
   kotlin: "2.1.0-Beta1"
   kotlinx:
