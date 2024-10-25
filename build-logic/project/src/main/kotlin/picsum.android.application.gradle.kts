@@ -1,4 +1,6 @@
+import me.omico.consensus.root.consensusRootProjectConfiguration
 import me.omico.gradle.project.PROJECT_JAVA_VERSION
+import me.omico.gradle.project.configureAndroidSigningConfigForRelease
 
 plugins {
     kotlin("android")
@@ -7,10 +9,12 @@ plugins {
     id("picsum.compose")
 }
 
+configureAndroidSigningConfigForRelease()
+
 android {
     defaultConfig {
-        versionCode = 1
-        versionName = version.toString()
+        versionCode = consensusRootProjectConfiguration.versionCode
+        versionName = consensusRootProjectConfiguration.versionName
     }
     buildFeatures {
         buildConfig = true
