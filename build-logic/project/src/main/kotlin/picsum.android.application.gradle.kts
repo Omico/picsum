@@ -1,4 +1,5 @@
 import me.omico.gradle.project.PROJECT_JAVA_VERSION
+import me.omico.gradle.project.configureAndroidSigningConfigForRelease
 
 plugins {
     kotlin("android")
@@ -6,6 +7,8 @@ plugins {
     id("picsum.android.base")
     id("picsum.compose")
 }
+
+configureAndroidSigningConfigForRelease()
 
 android {
     defaultConfig {
