@@ -5,6 +5,9 @@ plugins {
 }
 
 android {
+    defaultConfig {
+        targetSdk = 35
+    }
     buildTypes {
         release {
             isMinifyEnabled = true
