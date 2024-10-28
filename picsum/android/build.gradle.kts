@@ -18,7 +18,9 @@ androidComponents {
     onVariants(selector().withBuildType("release")) { variant ->
         variant.packaging.resources.excludes.addAll(
             "DebugProbesKt.bin",
+            "META-INF/**/LICENSE.txt",
             "META-INF/*.version",
+            "META-INF/NOTICE.md",
             "kotlin-tooling-metadata.json",
         )
     }
