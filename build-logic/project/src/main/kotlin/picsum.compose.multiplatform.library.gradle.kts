@@ -1,4 +1,4 @@
 plugins {
     id("picsum.kotlin.multiplatform.library")
-    id("picsum.compose")
+    id("picsum.compose-multiplatform")
 }

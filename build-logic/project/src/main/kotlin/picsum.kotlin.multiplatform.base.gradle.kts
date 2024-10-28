@@ -1,5 +1,5 @@
 import me.omico.gradle.project.PROJECT_JAVA_VERSION
-import me.omico.gradle.project.createSourcePackageDirectories
+import me.omico.gradle.project.createDefaultSourcePackageDirectories
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 
 plugins {
@@ -28,7 +28,7 @@ kotlin {
         }
 
         if (!path.startsWith(":picsum-androidx-")) {
-            createSourcePackageDirectories(project)
+            createDefaultSourcePackageDirectories(project)
         }
     }
 }

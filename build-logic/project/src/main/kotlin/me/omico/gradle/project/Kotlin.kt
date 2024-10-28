@@ -8,12 +8,22 @@ import org.gradle.api.Project
 import org.jetbrains.kotlin.gradle.plugin.KotlinSourceSet
 import java.io.File
 
-internal fun NamedDomainObjectContainer<KotlinSourceSet>.createSourcePackageDirectories(project: Project): Unit =
+internal typealias KotlinSourceSets = NamedDomainObjectContainer<KotlinSourceSet>
+
+internal val Project.kotlinSourcePackage: String
+    get() = kotlinSourcePackagePaths.joinToString(".")
+
+internal fun KotlinSourceSets.createDefaultSourcePackageDirectories(project: Project): Unit =
     configureEach { kotlin.srcDirs.filter(File::exists).forEach(project::createKotlinSourcePackageDirectories) }
 
 private fun Project.createKotlinSourcePackageDirectories(sourceDirectory: File) {
-    var paths = project.path.removePrefix(":").split('-').drop(1)
-    if (paths.first() == "core") paths = paths.drop(1)
-    paths = project.group.toString().split('.') + paths
-    sourceDirectory.resolve(paths.joinToString("/")).mkdirs()
+    sourceDirectory.resolve(kotlinSourcePackagePaths.joinToString("/")).mkdirs()
 }
+
+private val Project.kotlinSourcePackagePaths: List<String>
+    get() {
+        var paths = path.removePrefix(":").split('-').drop(1)
+        if (paths.first() == "core") paths = paths.drop(1)
+        paths = group.toString().split('.') + paths
+        return paths
+    }

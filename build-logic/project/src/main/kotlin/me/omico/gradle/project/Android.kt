@@ -15,13 +15,13 @@ import java.io.File
 internal typealias AndroidCommonExtension = CommonExtension<*, *, *, *, *, *>
 internal typealias AndroidApplicationExtension = ApplicationExtension
 
-internal fun Project.configureCommonAndroid(block: AndroidCommonExtension.() -> Unit): Unit =
+internal fun Project.configureAndroidCommonExtension(block: AndroidCommonExtension.() -> Unit): Unit =
     extensions.configure("android", block)
 
 internal fun Project.configureAndroidApplicationExtension(block: AndroidApplicationExtension.() -> Unit): Unit =
     extensions.configure("android", block)
 
-internal fun Project.configureCommonAndroid(
+internal fun Project.configureAndroidCommonExtension(
     domain: String,
     compileSdk: Int,
     minSdk: Int,
@@ -29,7 +29,7 @@ internal fun Project.configureCommonAndroid(
     javaVersion: JavaVersion = JavaVersion.toVersion(PROJECT_JAVA_VERSION),
     coreLibraryDesugaringVersion: String = "2.0.4",
 ) {
-    configureCommonAndroid {
+    configureAndroidCommonExtension {
         this.namespace = namespace
         this.compileSdk = compileSdk
         defaultConfig {

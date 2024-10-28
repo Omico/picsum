@@ -6,7 +6,6 @@ plugins {
     kotlin("android")
     id("com.android.application")
     id("picsum.android.base")
-    id("picsum.compose")
 }
 
 configureAndroidSigningConfigForRelease()
@@ -21,5 +20,11 @@ android {
     }
     kotlinOptions {
         jvmTarget = PROJECT_JAVA_VERSION.toString()
+    }
+    buildTypes {
+        all {
+            @Suppress("UnstableApiUsage")
+            vcsInfo.include = false
+        }
     }
 }

@@ -1,5 +1,6 @@
 plugins {
     id("picsum.android.application")
+    id("picsum.compose-multiplatform")
     id("picsum.hilt")
 }
 
