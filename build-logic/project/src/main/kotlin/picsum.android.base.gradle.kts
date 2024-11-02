@@ -1,4 +1,5 @@
 import me.omico.gradle.project.configureAndroidCommonExtension
+import me.omico.gradm.dependency.DesugarJdkLibs
 
 plugins {
     id("com.android.base")
@@ -10,6 +11,7 @@ configureAndroidCommonExtension(
     domain = "me.omico",
     compileSdk = 35,
     minSdk = 30,
+    coreLibraryDesugaringDependency = DesugarJdkLibs.nio,
 )
 
 plugins.withId("org.jetbrains.kotlin.plugin.compose") {
