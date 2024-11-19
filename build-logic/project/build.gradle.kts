@@ -7,7 +7,11 @@ dependencies {
     implementation(com.google.dagger.hilt.android)
     implementation(consensusGradlePlugins)
     implementation(gradmGeneratedJar)
-    implementation(kamiAndroidPlugin)
-    implementation(kamiComposePlugin)
-    implementation(kamiKotlinPlugin)
+}
+
+dependencies {
+    implementation("me.omico.kami:kami-android")
+    implementation("me.omico.kami:kami-compose")
+    implementation("me.omico.kami:kami-core")
+    implementation("me.omico.kami:kami-kotlin")
 }
