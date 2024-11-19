@@ -1,5 +1,5 @@
 plugins {
-    kotlin("android")
-    id("com.android.library")
+    kamiAndroidLibrary
+    kamiKotlinAndroid
     id("picsum.android.base")
 }
