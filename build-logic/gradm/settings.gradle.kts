@@ -1,4 +1,4 @@
-rootProject.name = "picsum-gradm"
+rootProject.name = "picsum-build-logic-gradm"
 
 pluginManagement {
     repositories {
