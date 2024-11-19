@@ -3,9 +3,13 @@ import me.omico.gradle.project.PROJECT_JAVA_VERSION
 import me.omico.gradle.project.configureAndroidSigningConfigForRelease
 
 plugins {
-    kotlin("android")
-    id("com.android.application")
+    id("me.omico.kami.kotlin.android")
+    id("me.omico.kami.android.application")
     id("picsum.android.base")
+}
+
+kotlin {
+    jvmToolchain(PROJECT_JAVA_VERSION)
 }
 
 configureAndroidSigningConfigForRelease()
@@ -15,16 +19,7 @@ android {
         versionCode = consensusRootProjectConfiguration.versionCode
         versionName = consensusRootProjectConfiguration.versionName
     }
-    buildFeatures {
-        buildConfig = true
-    }
-    kotlinOptions {
-        jvmTarget = PROJECT_JAVA_VERSION.toString()
-    }
-    buildTypes {
-        all {
-            @Suppress("UnstableApiUsage")
-            vcsInfo.include = false
-        }
-    }
+//    kotlinOptions {
+//        jvmTarget = PROJECT_JAVA_VERSION.toString()
+//    }
 }

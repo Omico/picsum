@@ -1,21 +1,24 @@
-import me.omico.gradle.project.configureAndroidCommonExtension
+import me.omico.kami.android.dsl.configureAndroidCommonExtension
 
 plugins {
-    id("com.android.base")
-    id("org.gradle.android.cache-fix")
+    id("me.omico.kami.android.base")
 }
 
-// Android 11+
-configureAndroidCommonExtension(
-    domain = "me.omico",
-    compileSdk = 35,
-    minSdk = 30,
-)
+configureAndroidCommonExtension {
+    namespace = "me.omico.${name.replace("-", ".")}"
+    compileSdk = 35
+    defaultConfig {
+        minSdk = 30
+    }
+    // TODO Configure by Kami Kotlin Plugin
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+}
 
-plugins.withId("org.jetbrains.kotlin.plugin.compose") {
-    configureAndroidCommonExtension {
-        buildFeatures {
-            compose = true
-        }
+kami {
+    android {
+        coreLibraryDesugaring("com.android.tools:desugar_jdk_libs_nio:2.1.2")
     }
 }
