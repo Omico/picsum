@@ -27,3 +27,9 @@ consensus {
         )
     }
 }
+
+tasks {
+    listOf(spotlessApply, spotlessCheck).forEach { task ->
+        task { dependsOn(gradle.includedBuild("kami").task(":${task.name}")) }
+    }
+}

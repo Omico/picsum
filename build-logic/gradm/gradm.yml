@@ -16,7 +16,6 @@ versions:
   okio: "3.11.0"
   plugins:
     develocity: "4.0.1"
-    kami: "0.5.0"
     roommate: "0.4.0"
 
 repositories:
