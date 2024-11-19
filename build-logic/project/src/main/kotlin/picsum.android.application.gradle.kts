@@ -3,7 +3,7 @@ import me.omico.gradle.project.PROJECT_JAVA_VERSION
 import me.omico.gradle.project.configureAndroidSigningConfigForRelease
 
 plugins {
-    id("com.android.application")
+    id("me.omico.kami.android.application")
     id("picsum.android.base")
     id("picsum.kotlin.android.base")
 }
@@ -15,16 +15,15 @@ android {
         versionCode = consensusRootProjectConfiguration.versionCode
         versionName = consensusRootProjectConfiguration.versionName
     }
-    buildFeatures {
-        buildConfig = true
-    }
-    kotlinOptions {
-        jvmTarget = PROJECT_JAVA_VERSION.toString()
-    }
-    buildTypes {
-        all {
-            @Suppress("UnstableApiUsage")
-            vcsInfo.include = false
+}
+
+kami {
+    android {
+        application {
+            coreLibraryDesugaring("com.android.tools:desugar_jdk_libs_nio:2.1.2")
         }
+    }
+    kotlin {
+        jvmToolchain(PROJECT_JAVA_VERSION)
     }
 }
