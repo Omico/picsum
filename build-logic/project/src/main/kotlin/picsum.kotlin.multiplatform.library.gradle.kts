@@ -14,7 +14,7 @@ kotlin {
     @OptIn(ExperimentalKotlinGradlePluginApi::class)
     applyDefaultHierarchyTemplate {
         common {
-            group("jvmCommon") {
+            group("commonJvm") {
                 withAndroidTarget()
                 withJvm()
             }
