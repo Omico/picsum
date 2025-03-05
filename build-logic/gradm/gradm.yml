@@ -8,7 +8,7 @@ versions:
     room: "2.7.0-alpha12"
   coil: "3.0.4"
   compose.multiplatform: "1.7.3"
-  consensus: "0.17.1"
+  consensus: "0.19.1"
   delusion: "0.10.1"
   hilt: "2.54"
   kotlin: "2.1.0"
@@ -20,10 +20,9 @@ versions:
   plugins:
     android: "8.7.3"
     cacheFix: "3.0.1"
-    develocity: "3.19"
+    develocity: "3.19.2"
     ksp: "2.1.0-1.0.29"
     roommate: "0.4.0"
-    spotless: "7.0.0.BETA4"
 
 repositories:
   jetbrainsCompose:
@@ -37,7 +36,6 @@ plugins:
   google:
     androidx.room: ${versions.androidx.room}
   gradlePluginPortal:
-    com.diffplug.spotless: ${versions.plugins.spotless}
     com.gradle.develocity: ${versions.plugins.develocity}
     org.gradle.android.cache-fix: ${versions.plugins.cacheFix}
     org.jetbrains.compose: ${versions.compose.multiplatform}

@@ -1,5 +1,5 @@
 import me.omico.consensus.api.dsl.requireRootProject
-import me.omico.consensus.spotless.ConsensusSpotlessTokens
+import me.omico.consensus.spotless.ConsensusSpotlessDefaults
 
 plugins {
     id("me.omico.consensus.spotless")
@@ -9,21 +9,22 @@ requireRootProject()
 
 consensus {
     spotless {
-        rootProject {
-            freshmark()
-            gradleProperties()
-        }
-        allprojects {
-            kotlin(
-                targets = ConsensusSpotlessTokens.Kotlin.targets + setOf(
-                    "build-logic/**/src/main/kotlin/**/*.kt",
-                ),
-                excludeTargets = setOf(
-                    "src/*/kotlin/androidx/**/*.kt",
-                ),
-                licenseHeaderFile = rootProject.file("spotless/copyright.kt").takeIf(File::exists),
-            )
-            kotlinGradle()
-        }
+        freshmark()
+        gradleProperties()
+        kotlin(
+            targets = ConsensusSpotlessDefaults.Kotlin.targets(
+                "build-logic/**/src/main/kotlin/**/*.kt",
+            ),
+            excludeTargets = ConsensusSpotlessDefaults.Kotlin.excludeTargets(
+                "src/*/kotlin/androidx/**/*.kt",
+            ),
+            licenseHeaderFile = rootProject.file("spotless/copyright.kt").takeIf(File::exists),
+        )
+        kotlinGradle(
+            targets = ConsensusSpotlessDefaults.KotlinGradle.targets(
+                "build-logic/*/*.gradle.kts",
+                "build-logic/*/src/main/kotlin/**/*.gradle.kts",
+            ),
+        )
     }
 }
