@@ -1,27 +1,27 @@
 versions:
   androidx:
-    activity: "1.10.0-rc01"
+    activity: "1.10.1"
     core:
-      splashScreen: "1.2.0-alpha02"
-    lifecycle: "2.9.0-alpha08"
-    paging: "3.3.5"
-    room: "2.7.0-alpha12"
-  coil: "3.0.4"
+      splashScreen: "1.2.0-beta01"
+    lifecycle: "2.9.0-alpha11"
+    paging: "3.3.6"
+    room: "2.7.0-rc01"
+  coil: "3.1.0"
   compose.multiplatform: "1.7.3"
   consensus: "0.19.1"
-  delusion: "0.10.1"
-  hilt: "2.54"
-  kotlin: "2.1.0"
+  delusion: "0.11.2"
+  hilt: "2.55"
+  kotlin: "2.1.10"
   kotlinx:
     coroutines: "1.10.1"
-    serialization: "1.7.3"
-  ktor: "3.0.3"
-  okio: "3.9.1"
+    serialization: "1.8.0"
+  ktor: "3.1.1"
+  okio: "3.10.2"
   plugins:
     android: "8.7.3"
     cacheFix: "3.0.1"
     develocity: "3.19.2"
-    ksp: "2.1.0-1.0.29"
+    ksp: "2.1.10-1.0.29"
     roommate: "0.4.0"
 
 repositories:
@@ -31,19 +31,20 @@ repositories:
   omico:
   mavenCentral:
   gradlePluginPortal:
+  noUpdates:
 
 plugins:
-  google:
-    androidx.room: ${versions.androidx.room}
   gradlePluginPortal:
     com.gradle.develocity: ${versions.plugins.develocity}
     org.gradle.android.cache-fix: ${versions.plugins.cacheFix}
     org.jetbrains.compose: ${versions.compose.multiplatform}
-    org.jetbrains.kotlin.plugin.compose: ${versions.kotlin}
-    org.jetbrains.kotlin.plugin.serialization: ${versions.kotlin}
   mavenCentral:
     com.google.dagger.hilt.android: ${versions.hilt}
     com.google.devtools.ksp: ${versions.plugins.ksp}
+  noUpdates:
+    androidx.room: ${versions.androidx.room}
+    org.jetbrains.kotlin.plugin.compose: ${versions.kotlin}
+    org.jetbrains.kotlin.plugin.serialization: ${versions.kotlin}
   omico:
     dev.omico.roommate: ${versions.plugins.roommate}
 
