@@ -20,11 +20,13 @@ versions:
   plugins:
     android: "8.7.3"
     cacheFix: "3.0.1"
+    dehell: "0.4.0-SNAPSHOT"
     develocity: "3.19.2"
     ksp: "2.1.10-1.0.29"
     roommate: "0.4.0"
 
 repositories:
+  mavenLocal:
   jetbrainsCompose:
     url: "https://maven.pkg.jetbrains.space/public/p/compose/dev"
   google:
@@ -43,6 +45,7 @@ plugins:
     com.google.devtools.ksp: ${versions.plugins.ksp}
   noUpdates:
     androidx.room: ${versions.androidx.room}
+    me.omico.dehell: ${versions.plugins.dehell}
     org.jetbrains.kotlin.plugin.compose: ${versions.kotlin}
     org.jetbrains.kotlin.plugin.serialization: ${versions.kotlin}
   omico:

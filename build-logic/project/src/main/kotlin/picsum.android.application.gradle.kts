@@ -6,6 +6,7 @@ plugins {
     id("com.android.application")
     id("picsum.android.base")
     id("picsum.kotlin.android.base")
+    id("me.omico.dehell")
 }
 
 configureAndroidSigningConfigForRelease()
@@ -27,4 +28,8 @@ android {
             vcsInfo.include = false
         }
     }
+}
+
+dehell {
+    variant = "release"
 }

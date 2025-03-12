@@ -14,3 +14,7 @@ dependencies {
     implementation(org.jetbrains.compose)
     implementation(org.jetbrains.kotlin.plugin.compose)
 }
+
+dependencies {
+    implementation(me.omico.dehell)
+}
