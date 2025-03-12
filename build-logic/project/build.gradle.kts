@@ -11,3 +11,7 @@ dependencies {
     implementation(kamiComposePlugin)
     implementation(kamiKotlinPlugin)
 }
+
+dependencies {
+    implementation(me.omico.dehell)
+}

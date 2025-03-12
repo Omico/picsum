@@ -1,6 +1,7 @@
 plugins {
     id("picsum.android.base")
     id("picsum.kotlin.multiplatform.base")
+    id("picsum.dehell")
 }
 
 kami {
@@ -10,4 +11,8 @@ kami {
             jvmDesktop()
         }
     }
+}
+
+dehell {
+    variant = "desktop"
 }

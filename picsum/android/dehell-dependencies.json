@@ -1,0 +1,56 @@
+{
+  "dependencies": [
+    {
+      "name": "Coil 3",
+      "url": "https://coil-kt.github.io/coil"
+    },
+    {
+      "name": "Compose Multiplatform",
+      "url": "https://www.jetbrains.com/compose-multiplatform"
+    },
+    {
+      "name": "Dagger",
+      "url": "https://dagger.dev"
+    },
+    {
+      "name": "Hilt",
+      "url": "https://developer.android.com/training/dependency-injection/hilt-android"
+    },
+    {
+      "name": "JetBrains Annotations",
+      "url": "https://github.com/JetBrains/java-annotations"
+    },
+    {
+      "name": "Jetpack",
+      "url": "https://developer.android.com/jetpack"
+    },
+    {
+      "name": "Jetpack Compose",
+      "url": "https://developer.android.com/compose"
+    },
+    {
+      "name": "Jetpack Paging",
+      "url": "https://developer.android.com/topic/libraries/architecture/paging/v3-overview"
+    },
+    {
+      "name": "Kotlin",
+      "url": "https://kotlinlang.org"
+    },
+    {
+      "name": "Kotlinx Coroutines",
+      "url": "https://kotlinlang.org/docs/coroutines-guide.html"
+    },
+    {
+      "name": "Kotlinx Serialization",
+      "url": "https://kotlinlang.org/docs/serialization.html"
+    },
+    {
+      "name": "Ktor",
+      "url": "https://ktor.io"
+    },
+    {
+      "name": "Okio",
+      "url": "https://square.github.io/okio"
+    }
+  ]
+}

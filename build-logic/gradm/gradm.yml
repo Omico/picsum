@@ -15,6 +15,7 @@ versions:
   ktor: "3.1.2"
   okio: "3.11.0"
   plugins:
+    dehell: "0.3.0"
     develocity: "4.0.1"
     kami: "0.5.0"
     roommate: "0.4.0"
@@ -33,6 +34,7 @@ plugins:
     com.google.dagger.hilt.android: ${versions.hilt}
   noUpdates:
     androidx.room: ${versions.androidx.room}
+    me.omico.dehell: ${versions.plugins.dehell}
   omico:
     dev.omico.roommate: ${versions.plugins.roommate}
 

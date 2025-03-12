@@ -6,6 +6,7 @@ plugins {
     id("me.omico.kami.android.application")
     id("picsum.android.base")
     id("picsum.kotlin.android.base")
+    id("picsum.dehell")
 }
 
 configureAndroidSigningConfigForRelease()
@@ -26,4 +27,8 @@ kami {
     kotlin {
         jvmToolchain(PROJECT_JAVA_VERSION)
     }
+}
+
+dehell {
+    variant = "release"
 }
