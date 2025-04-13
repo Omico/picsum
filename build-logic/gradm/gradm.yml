@@ -10,18 +10,18 @@ versions:
   compose.multiplatform: "1.7.3"
   consensus: "0.19.1"
   delusion: "0.11.2"
-  hilt: "2.55"
-  kotlin: "2.1.10"
+  hilt: "2.56.1"
+  kotlin: "2.1.20"
   kotlinx:
-    coroutines: "1.10.1"
-    serialization: "1.8.0"
-  ktor: "3.1.1"
+    coroutines: "1.10.2"
+    serialization: "1.8.1"
+  ktor: "3.1.2"
   okio: "3.10.2"
   plugins:
-    android: "8.7.3"
+    android: "8.9.1"
     cacheFix: "3.0.1"
-    develocity: "3.19.2"
-    ksp: "2.1.10-1.0.29"
+    develocity: "4.0"
+    ksp: "2.1.20-2.0.0"
     roommate: "0.4.0"
 
 repositories:
