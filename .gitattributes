@@ -10,16 +10,22 @@
 *.kt text diff=kotlin
 *.md text diff=markdown
 *.properties text
+*.rs text diff=rust
 *.scala text diff=java
+*.svg text
+*.toml text diff=toml
 *.xml text
+*.yaml text
 *.yml text
 .gitattributes text
 .gitignore text
 .gitmodules text
 LICENSE text
 gradlew text
+package-lock.json text eol=lf -diff
+package.json text eol=lf
 proguard-rules.pro text
-yarn.lock text
+yarn.lock text -diff
 
 *.bat text eol=crlf
 *.cmd text eol=crlf

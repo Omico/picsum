@@ -8,7 +8,7 @@ versions:
     room: "2.7.0-rc01"
   coil: "3.1.0"
   compose.multiplatform: "1.7.3"
-  consensus: "0.19.1"
+  consensus: "0.20.0"
   delusion: "0.11.2"
   hilt: "2.56.2"
   kotlin: "2.1.20"

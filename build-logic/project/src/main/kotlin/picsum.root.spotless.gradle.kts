@@ -22,8 +22,7 @@ consensus {
         )
         kotlinGradle(
             targets = ConsensusSpotlessDefaults.KotlinGradle.targets(
-                "build-logic/*/*.gradle.kts",
-                "build-logic/*/src/main/kotlin/**/*.gradle.kts",
+                "build-logic/*/src/**/*.gradle.kts",
             ),
         )
     }
