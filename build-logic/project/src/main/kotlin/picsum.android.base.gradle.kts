@@ -2,7 +2,6 @@ import me.omico.gradle.project.configureAndroidCommonExtension
 
 plugins {
     id("com.android.base")
-    id("org.gradle.android.cache-fix")
 }
 
 // Android 11+

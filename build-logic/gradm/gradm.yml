@@ -19,7 +19,6 @@ versions:
   okio: "3.10.2"
   plugins:
     android: "8.9.1"
-    cacheFix: "3.0.1"
     develocity: "4.0"
     ksp: "2.1.20-2.0.0"
     roommate: "0.4.0"
@@ -36,7 +35,6 @@ repositories:
 plugins:
   gradlePluginPortal:
     com.gradle.develocity: ${versions.plugins.develocity}
-    org.gradle.android.cache-fix: ${versions.plugins.cacheFix}
     org.jetbrains.compose: ${versions.compose.multiplatform}
   mavenCentral:
     com.google.dagger.hilt.android: ${versions.hilt}

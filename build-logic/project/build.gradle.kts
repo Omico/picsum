@@ -10,7 +10,6 @@ dependencies {
     implementation(consensusGradlePlugins)
     implementation(gradmGeneratedJar)
     implementation(kotlinGradlePlugin)
-    implementation(org.gradle.android.cacheFix)
     implementation(org.jetbrains.compose)
     implementation(org.jetbrains.kotlin.plugin.compose)
 }
