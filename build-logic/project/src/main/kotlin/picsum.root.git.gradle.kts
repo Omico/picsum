@@ -10,12 +10,8 @@ consensus {
     git {
         hooks {
             preCommit {
-                appendLine("#!/bin/sh")
-                appendLine()
                 correctGradleWrapperScriptPermissions()
-                appendLine()
                 checkGitAttributes()
-                appendLine()
             }
         }
     }
