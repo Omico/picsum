@@ -1,6 +1,13 @@
 plugins {
     id("picsum.kotlin.multiplatform.library.hilt")
-    kotlin("plugin.serialization")
+}
+
+kami {
+    kotlin {
+        compilerPlugins {
+            serialization()
+        }
+    }
 }
 
 kotlin {
@@ -10,9 +17,11 @@ kotlin {
                 implementation(project(":picsum-core-foundation"))
             }
             dependencies {
-                implementation(kotlinx.serialization.json)
                 implementation(ktor.client.content.negotiation)
                 implementation(ktor.serialization.kotlinx.json)
+                kamiDependencies {
+                    implementation(kotlinx.serialization.json)
+                }
             }
         }
 

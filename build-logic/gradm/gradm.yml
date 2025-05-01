@@ -7,25 +7,19 @@ versions:
     paging: "3.3.6"
     room: "2.7.0-rc01"
   coil: "3.1.0"
-  compose.multiplatform: "1.7.3"
   consensus: "0.20.1"
   delusion: "0.11.2"
   hilt: "2.56.2"
-  kotlin: "2.1.20"
   kotlinx:
     coroutines: "1.10.2"
-    serialization: "1.8.1"
   ktor: "3.1.2"
   okio: "3.11.0"
   plugins:
-    android: "8.9.2"
     develocity: "4.0.1"
-    ksp: "2.1.20-2.0.0"
+    kami: "0.5.0"
     roommate: "0.4.0"
 
 repositories:
-  jetbrainsCompose:
-    url: "https://maven.pkg.jetbrains.space/public/p/compose/dev"
   google:
   omico:
   mavenCentral:
@@ -35,14 +29,10 @@ repositories:
 plugins:
   gradlePluginPortal:
     com.gradle.develocity: ${versions.plugins.develocity}
-    org.jetbrains.compose: ${versions.compose.multiplatform}
   mavenCentral:
     com.google.dagger.hilt.android: ${versions.hilt}
-    com.google.devtools.ksp: ${versions.plugins.ksp}
   noUpdates:
     androidx.room: ${versions.androidx.room}
-    org.jetbrains.kotlin.plugin.compose: ${versions.kotlin}
-    org.jetbrains.kotlin.plugin.serialization: ${versions.kotlin}
   omico:
     dev.omico.roommate: ${versions.plugins.roommate}
 
@@ -67,10 +57,6 @@ dependencies:
       paging-compose:
         alias: androidx.paging.compose
         version: ${versions.androidx.paging}
-    com.android.tools.build:
-      gradle:
-        alias: androidGradlePlugin
-        version: ${versions.plugins.android}
   mavenCentral:
     com.google.dagger:
       hilt-android:
@@ -100,10 +86,6 @@ dependencies:
       ktor-serialization-kotlinx-json:
         alias: ktor.serialization.kotlinx.json
         version: ${versions.ktor}
-    org.jetbrains.kotlin:
-      kotlin-gradle-plugin:
-        alias: kotlinGradlePlugin
-        version: ${versions.kotlin}
     org.jetbrains.kotlinx:
       kotlinx-coroutines-android:
         alias: kotlinx.coroutines.android
@@ -111,9 +93,6 @@ dependencies:
       kotlinx-coroutines-core:
         alias: kotlinx.coroutines.core
         version: ${versions.kotlinx.coroutines}
-      kotlinx-serialization-json:
-        alias: kotlinx.serialization.json
-        version: ${versions.kotlinx.serialization}
   omico:
     me.omico.consensus:
       consensus-gradle-plugins:
@@ -123,3 +102,13 @@ dependencies:
       delusion-logger:
         alias: delusion.logger
         version: ${versions.delusion}
+    me.omico.kami:
+      kami-android:
+        alias: kamiAndroidPlugin
+        version: ${versions.plugins.kami}
+      kami-compose:
+        alias: kamiComposePlugin
+        version: ${versions.plugins.kami}
+      kami-kotlin:
+        alias: kamiKotlinPlugin
+        version: ${versions.plugins.kami}
