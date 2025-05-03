@@ -15,9 +15,6 @@ consensus {
             targets = ConsensusSpotlessDefaults.Kotlin.targets(
                 "build-logic/**/src/main/kotlin/**/*.kt",
             ),
-            excludeTargets = ConsensusSpotlessDefaults.Kotlin.excludeTargets(
-                "src/*/kotlin/androidx/**/*.kt",
-            ),
             licenseHeaderFile = rootProject.file("spotless/copyright.kt").takeIf(File::exists),
         )
         kotlinGradle(
