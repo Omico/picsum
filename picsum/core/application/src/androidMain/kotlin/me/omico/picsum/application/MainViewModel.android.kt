@@ -1,7 +1,7 @@
 /*
- * Copyright 2024 Omico. All Rights Reserved.
+ * Copyright 2024-2025 Omico. All Rights Reserved.
  */
-package me.omico.picsum.android
+package me.omico.picsum.application
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -14,11 +14,9 @@ import me.omico.picsum.data.model.GalleryImage
 import javax.inject.Inject
 
 @HiltViewModel
-class MainViewModel @Inject constructor(
+actual class MainViewModel @Inject constructor(
     private val galleryDataSource: GalleryDataSource,
 ) : ViewModel() {
-    fun galleryImagePagingDataFlow(pageSize: Int = DEFAULT_PAGE_SIZE): Flow<PagingData<GalleryImage>> =
+    actual fun galleryImagePagingDataFlow(pageSize: Int): Flow<PagingData<GalleryImage>> =
         galleryDataSource.imagePagingDataFlow(pageSize).cachedIn(viewModelScope)
 }
-
-private const val DEFAULT_PAGE_SIZE: Int = 10

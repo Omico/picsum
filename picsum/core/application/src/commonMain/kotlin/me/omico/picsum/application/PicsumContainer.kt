@@ -1,7 +1,7 @@
 /*
- * Copyright 2024 Omico. All Rights Reserved.
+ * Copyright 2024-2025 Omico. All Rights Reserved.
  */
-package me.omico.picsum.ui
+package me.omico.picsum.application
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
