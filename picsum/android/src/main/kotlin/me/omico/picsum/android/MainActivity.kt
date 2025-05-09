@@ -11,6 +11,7 @@ import androidx.activity.viewModels
 import androidx.compose.runtime.getValue
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.paging.compose.collectAsLazyPagingItems
 import dagger.hilt.android.AndroidEntryPoint
 import me.omico.picsum.application.PicsumContainer
 import me.omico.picsum.feature.gallery.GalleryViewModel
@@ -25,8 +26,10 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             val uiState by viewModel.uiState.collectAsStateWithLifecycle()
+            val lazyPagingGalleryImages = viewModel.galleryImagePagingData.collectAsLazyPagingItems()
             PicsumContainer(
                 galleryUiState = uiState,
+                lazyPagingGalleryImages = lazyPagingGalleryImages,
             )
         }
     }

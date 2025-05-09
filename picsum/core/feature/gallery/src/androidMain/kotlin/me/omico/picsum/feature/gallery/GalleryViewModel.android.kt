@@ -12,8 +12,8 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.flow.mapLatest
 import kotlinx.coroutines.flow.stateIn
 import me.omico.picsum.data.datasource.GalleryDataSource
 import me.omico.picsum.data.model.GalleryImage
@@ -23,20 +23,16 @@ import javax.inject.Inject
 actual class GalleryViewModel @Inject constructor(
     private val galleryDataSource: GalleryDataSource,
 ) : ViewModel() {
-    private val pageSize: MutableStateFlow<Int> = MutableStateFlow(DEFAULT_PAGE_SIZE)
-
-    @OptIn(ExperimentalCoroutinesApi::class)
-    private val galleryImagePagingData: Flow<Flow<PagingData<GalleryImage>>> =
-        pageSize.mapLatest(galleryDataSource::imagePagingDataFlow)
+    private val pagingPageSize: MutableStateFlow<Int> = MutableStateFlow(DEFAULT_PAGE_SIZE)
 
     actual val uiState: StateFlow<GalleryUiState> =
-        galleryImagePagingData
-            .map { pagingData ->
+        pagingPageSize
+            .map { pageSize ->
                 GalleryUiState(
-                    galleryImagePagingData = pagingData,
+                    pageSize = pageSize,
                     eventSink = { event ->
                         when (event) {
-                            is GalleryUiEvent.ChangePageSize -> pageSize.value = event.size
+                            is GalleryUiEvent.ChangePageSize -> pagingPageSize.value = event.size
                         }
                     },
                 )
@@ -46,4 +42,8 @@ actual class GalleryViewModel @Inject constructor(
                 started = SharingStarted.Lazily,
                 initialValue = GalleryUiState.Empty,
             )
+
+    @OptIn(ExperimentalCoroutinesApi::class)
+    actual val galleryImagePagingData: Flow<PagingData<GalleryImage>> =
+        pagingPageSize.flatMapLatest(galleryDataSource::imagePagingDataFlow)
 }

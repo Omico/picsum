@@ -34,7 +34,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import androidx.paging.LoadState
-import androidx.paging.compose.collectAsLazyPagingItems
+import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.itemKey
 import coil3.compose.AsyncImagePainter
 import coil3.compose.LocalPlatformContext
@@ -47,9 +47,9 @@ import me.omico.picsum.data.model.GalleryImage
 @Composable
 fun GalleryUi(
     uiState: GalleryUiState,
+    lazyPagingGalleryImages: LazyPagingItems<GalleryImage>,
     modifier: Modifier = Modifier,
 ) {
-    val lazyPagingGalleryImages = uiState.galleryImagePagingData.collectAsLazyPagingItems()
     LazyVerticalStaggeredGrid(
         columns = StaggeredGridCells.Adaptive(minSize = 200.dp),
         modifier = modifier,
