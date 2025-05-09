@@ -63,11 +63,7 @@ fun GalleryUi(
             AnimatedVisibility(visible = lazyPagingGalleryImages.loadState.refresh == LoadState.Loading) {
                 Text(
                     text = "Loading...",
-                    modifier = run {
-                        Modifier
-                            .fillMaxWidth()
-                            .wrapContentWidth(align = Alignment.CenterHorizontally)
-                    },
+                    modifier = Modifier.wrapContentWidth(align = Alignment.CenterHorizontally),
                 )
             }
         }
@@ -117,24 +113,16 @@ fun GalleryImageItem(
                 model = imageRequest,
                 contentDescription = null,
                 modifier = Modifier.aspectRatio(ratio = ratio),
-                contentScale = ContentScale.Crop,
+                contentScale = ContentScale.Fit,
             ) {
                 val state by painter.state.collectAsState()
                 when (state) {
                     is AsyncImagePainter.State.Empty,
                     is AsyncImagePainter.State.Loading,
                     is AsyncImagePainter.State.Error,
-                    -> {
-                        Box(
-                            contentAlignment = Alignment.Center,
-                        ) {
-                            CircularProgressIndicator()
-                        }
-                    }
+                    -> Box(contentAlignment = Alignment.Center) { CircularProgressIndicator() }
 
-                    is AsyncImagePainter.State.Success -> {
-                        SubcomposeAsyncImageContent()
-                    }
+                    is AsyncImagePainter.State.Success -> SubcomposeAsyncImageContent()
                 }
             }
             Box(
