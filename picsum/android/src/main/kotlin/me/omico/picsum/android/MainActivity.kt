@@ -8,23 +8,25 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
+import androidx.compose.runtime.getValue
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import androidx.paging.compose.collectAsLazyPagingItems
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import dagger.hilt.android.AndroidEntryPoint
-import me.omico.picsum.application.MainViewModel
 import me.omico.picsum.application.PicsumContainer
+import me.omico.picsum.feature.gallery.GalleryViewModel
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
-    private val viewModel: MainViewModel by viewModels()
+    private val viewModel: GalleryViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         installSplashScreen()
         enableEdgeToEdge()
         super.onCreate(savedInstanceState)
         setContent {
+            val uiState by viewModel.uiState.collectAsStateWithLifecycle()
             PicsumContainer(
-                lazyPagingGalleryImages = viewModel.galleryImagePagingDataFlow().collectAsLazyPagingItems(),
+                galleryUiState = uiState,
             )
         }
     }

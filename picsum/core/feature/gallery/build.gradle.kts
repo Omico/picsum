@@ -1,5 +1,6 @@
 plugins {
     id("picsum.compose.multiplatform.library")
+    id("picsum.hilt")
 }
 
 kotlin {

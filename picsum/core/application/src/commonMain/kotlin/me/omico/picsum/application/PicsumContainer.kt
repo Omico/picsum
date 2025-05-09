@@ -7,19 +7,18 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.paging.compose.LazyPagingItems
-import me.omico.picsum.data.model.GalleryImage
 import me.omico.picsum.feature.gallery.GalleryUi
+import me.omico.picsum.feature.gallery.GalleryUiState
 import me.omico.picsum.ui.foundation.SetupCoil
 
 @Composable
 fun PicsumContainer(
-    lazyPagingGalleryImages: LazyPagingItems<GalleryImage>,
+    galleryUiState: GalleryUiState,
 ) {
     MaterialTheme {
         SetupCoil()
         GalleryUi(
-            lazyPagingGalleryImages = lazyPagingGalleryImages,
+            uiState = galleryUiState,
             modifier = Modifier.fillMaxSize(),
         )
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Omico. All Rights Reserved.
+ * Copyright 2024-2025 Omico. All Rights Reserved.
  */
 package me.omico.picsum.feature.gallery
 
@@ -34,7 +34,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import androidx.paging.LoadState
-import androidx.paging.compose.LazyPagingItems
+import androidx.paging.compose.collectAsLazyPagingItems
 import androidx.paging.compose.itemKey
 import coil3.compose.AsyncImagePainter
 import coil3.compose.LocalPlatformContext
@@ -46,9 +46,10 @@ import me.omico.picsum.data.model.GalleryImage
 
 @Composable
 fun GalleryUi(
-    lazyPagingGalleryImages: LazyPagingItems<GalleryImage>,
+    uiState: GalleryUiState,
     modifier: Modifier = Modifier,
 ) {
+    val lazyPagingGalleryImages = uiState.galleryImagePagingData.collectAsLazyPagingItems()
     LazyVerticalStaggeredGrid(
         columns = StaggeredGridCells.Adaptive(minSize = 200.dp),
         modifier = modifier,
@@ -130,6 +131,7 @@ fun GalleryImageItem(
                             CircularProgressIndicator()
                         }
                     }
+
                     is AsyncImagePainter.State.Success -> {
                         SubcomposeAsyncImageContent()
                     }
