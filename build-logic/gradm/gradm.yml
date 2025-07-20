@@ -3,19 +3,19 @@ versions:
     activity: "1.10.1"
     core:
       splashScreen: "1.2.0-beta01"
-    lifecycle: "2.9.0-alpha11"
+    lifecycle: "2.9.2"
     paging: "3.3.6"
     room: "2.7.0-rc01"
-  coil: "3.1.0"
-  consensus: "0.20.1"
+  coil: "3.2.0"
+  consensus: "0.20.2"
   delusion: "0.11.2"
   hilt: "2.56.2"
   kotlinx:
     coroutines: "1.10.2"
-  ktor: "3.1.2"
-  okio: "3.11.0"
+  ktor: "3.2.2"
+  okio: "3.15.0"
   plugins:
-    develocity: "4.0.1"
+    develocity: "4.1"
     kami: "0.5.0"
     roommate: "0.4.0"
 
