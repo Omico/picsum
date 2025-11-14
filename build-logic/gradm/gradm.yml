@@ -1,21 +1,21 @@
 versions:
   androidx:
-    activity: "1.10.1"
+    activity: "1.11.0"
     core:
-      splashScreen: "1.2.0-beta01"
-    lifecycle: "2.9.3"
+      splashScreen: "1.2.0"
+    lifecycle: "2.9.4"
     paging: "3.3.6"
     room: "2.7.0-rc01"
   coil: "3.3.0"
   consensus: "0.20.2"
   delusion: "0.11.2"
-  hilt: "2.57.1"
+  hilt: "2.57.2"
   kotlinx:
     coroutines: "1.10.2"
-  ktor: "3.2.3"
-  okio: "3.16.0"
+  ktor: "3.3.0"
+  okio: "3.16.2"
   plugins:
-    develocity: "4.1.1"
+    develocity: "4.2.2"
     kami: "0.6.0"
     roommate: "0.4.0"
 
