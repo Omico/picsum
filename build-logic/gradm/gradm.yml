@@ -3,7 +3,8 @@ versions:
     activity: "1.11.0"
     core:
       splashScreen: "1.2.0"
-    lifecycle: "2.9.4"
+    lifecycle: "2.10.0"
+    navigation3: "1.0.0"
     paging: "3.3.6"
     room: "2.7.0-rc01"
   coil: "3.3.0"
@@ -50,6 +51,16 @@ dependencies:
       lifecycle-viewmodel:
         alias: androidx.lifecycle.viewmodel
         version: ${versions.androidx.lifecycle}
+      lifecycle-viewmodel-navigation3:
+        alias: androidx.lifecycle.viewmodel.navigation3
+        version: ${versions.androidx.lifecycle}
+    androidx.navigation3:
+      navigation3-runtime:
+        alias: androidx.navigation3.runtime
+        version: ${versions.androidx.navigation3}
+      navigation3-ui:
+        alias: androidx.navigation3.ui
+        version: ${versions.androidx.navigation3}
     androidx.paging:
       paging-common:
         alias: androidx.paging.common

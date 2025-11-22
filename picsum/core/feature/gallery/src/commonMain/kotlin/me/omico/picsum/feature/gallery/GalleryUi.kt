@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.systemBars
@@ -33,8 +34,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.paging.LoadState
 import androidx.paging.compose.LazyPagingItems
+import androidx.paging.compose.collectAsLazyPagingItems
 import androidx.paging.compose.itemKey
 import coil3.compose.AsyncImagePainter
 import coil3.compose.LocalPlatformContext
@@ -43,6 +46,17 @@ import coil3.compose.SubcomposeAsyncImageContent
 import coil3.request.ImageRequest
 import coil3.request.crossfade
 import me.omico.picsum.data.model.GalleryImage
+
+@Composable
+fun GalleryUi(viewModel: GalleryViewModel) {
+    val uiState by viewModel.uiState.collectAsStateWithLifecycle()
+    val lazyPagingGalleryImages = viewModel.galleryImagePagingData.collectAsLazyPagingItems()
+    GalleryUi(
+        uiState = uiState,
+        lazyPagingGalleryImages = lazyPagingGalleryImages,
+        modifier = Modifier.fillMaxSize(),
+    )
+}
 
 @Composable
 fun GalleryUi(

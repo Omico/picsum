@@ -11,8 +11,11 @@ kotlin {
             }
             dependencies {
                 api(androidx.lifecycle.viewmodel)
-                api(compose.material3)
+                api(androidx.lifecycle.viewmodel.navigation3)
+                api(androidx.navigation3.runtime)
+                api(androidx.navigation3.ui)
                 api(coil.compose)
+                api(compose.material3)
             }
             dependencies {
                 implementation(coil.network.ktor)
