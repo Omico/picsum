@@ -1,20 +1,20 @@
 versions:
   androidx:
-    activity: "1.11.0"
+    activity: "1.12.1"
     core:
       splashScreen: "1.2.0"
     lifecycle: "2.10.0"
     navigation3: "1.0.0"
     paging: "3.3.6"
-    room: "2.7.0-rc01"
+    room: "2.8.4"
   coil: "3.3.0"
   consensus: "0.21.0"
   delusion: "0.11.2"
   hilt: "2.57.2"
   kotlinx:
     coroutines: "1.10.2"
-  ktor: "3.3.0"
-  okio: "3.16.2"
+  ktor: "3.3.3"
+  okio: "3.16.4"
   plugins:
     develocity: "4.2.2"
     kami: "0.7.0"
