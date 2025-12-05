@@ -8,7 +8,7 @@ versions:
     paging: "3.3.6"
     room: "2.7.0-rc01"
   coil: "3.3.0"
-  consensus: "0.20.2"
+  consensus: "0.21.0"
   delusion: "0.11.2"
   hilt: "2.57.2"
   kotlinx:

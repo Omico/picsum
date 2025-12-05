@@ -7,3 +7,8 @@ onAndroidBaseApplied {
         minSdk = 30
     }
 }
+
+// https://github.com/gradle/gradle/issues/33619
+tasks.withType<AbstractTestTask>().configureEach {
+    failOnNoDiscoveredTests = false
+}
