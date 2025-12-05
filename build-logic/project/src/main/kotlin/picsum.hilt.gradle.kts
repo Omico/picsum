@@ -23,7 +23,7 @@ onKotlinAndroidApplied {
 }
 
 onKotlinMultiplatformApplied {
-    dependencies {
+    project.dependencies {
         add("androidMainImplementation", Hilt.android)
         add("kspAndroid", Hilt.android.compiler)
     }
