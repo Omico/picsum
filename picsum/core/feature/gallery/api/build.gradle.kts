@@ -1,6 +1,6 @@
 plugins {
     id("picsum.compose.multiplatform.library")
-    id("picsum.hilt")
+    kotlin("plugin.serialization")
 }
 
 kotlin {
@@ -8,10 +8,6 @@ kotlin {
         commonMain {
             dependencies {
                 implementation(project(":picsum-core-ui"))
-                implementation(project(":picsum-core-data"))
-            }
-            dependencies {
-                api(project(":picsum-core-feature-gallery-api"))
             }
         }
     }

@@ -16,31 +16,38 @@ import kotlinx.serialization.modules.SerializersModule
 import kotlinx.serialization.modules.plus
 import kotlinx.serialization.modules.polymorphic
 import kotlinx.serialization.modules.subclass
-import me.omico.picsum.feature.gallery.GalleryRoute
 import me.omico.picsum.feature.gallery.addGalleryRoute
+import me.omico.picsum.feature.gallery.api.GalleryRoute
 import me.omico.picsum.ui.foundation.SetupCoil
 
 @Composable
 fun PicsumContainer() {
     MaterialTheme {
         SetupCoil()
-        val backStack = rememberNavBackStack(
-            configuration = SavedStateConfiguration {
-                serializersModule += SerializersModule {
-                    polymorphic(NavKey::class) { subclass(GalleryRoute::class) }
-                }
-            },
-            GalleryRoute,
-        )
+        val backStack =
+            rememberNavBackStack(
+                configuration =
+                    SavedStateConfiguration {
+                        serializersModule +=
+                            SerializersModule {
+                                polymorphic(NavKey::class) {
+                                    subclass(GalleryRoute::class)
+                                }
+                            }
+                    },
+                GalleryRoute,
+            )
         NavDisplay(
             backStack = backStack,
-            entryDecorators = listOf(
-                rememberSaveableStateHolderNavEntryDecorator(),
-                rememberViewModelStoreNavEntryDecorator(),
-            ),
-            entryProvider = entryProvider {
-                addGalleryRoute()
-            }
+            entryDecorators =
+                listOf(
+                    rememberSaveableStateHolderNavEntryDecorator(),
+                    rememberViewModelStoreNavEntryDecorator(),
+                ),
+            entryProvider =
+                entryProvider {
+                    addGalleryRoute()
+                },
         )
     }
 }
