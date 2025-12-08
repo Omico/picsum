@@ -16,14 +16,12 @@ import kotlinx.serialization.modules.SerializersModule
 import kotlinx.serialization.modules.plus
 import kotlinx.serialization.modules.polymorphic
 import kotlinx.serialization.modules.subclass
-import me.omico.picsum.data.datasource.GalleryDataSource
 import me.omico.picsum.feature.gallery.GalleryRoute
 import me.omico.picsum.feature.gallery.addGalleryRoute
-import me.omico.picsum.feature.gallery.rememberGalleryDataSourceNavEntryDecorator
 import me.omico.picsum.ui.foundation.SetupCoil
 
 @Composable
-fun PicsumContainer(galleryDataSource: GalleryDataSource) {
+fun PicsumContainer() {
     MaterialTheme {
         SetupCoil()
         val backStack = rememberNavBackStack(
@@ -39,7 +37,6 @@ fun PicsumContainer(galleryDataSource: GalleryDataSource) {
             entryDecorators = listOf(
                 rememberSaveableStateHolderNavEntryDecorator(),
                 rememberViewModelStoreNavEntryDecorator(),
-                rememberGalleryDataSourceNavEntryDecorator(galleryDataSource = galleryDataSource),
             ),
             entryProvider = entryProvider {
                 addGalleryRoute()

@@ -1,3 +1,4 @@
+import me.omico.gradm.dependency.Androidx
 import me.omico.gradm.dependency.Hilt
 import me.omico.kami.kotlin.dsl.onKotlinAndroidApplied
 import me.omico.kami.kotlin.dsl.onKotlinMultiplatformApplied
@@ -26,5 +27,11 @@ onKotlinMultiplatformApplied {
     project.dependencies {
         add("androidMainImplementation", Hilt.android)
         add("kspAndroid", Hilt.android.compiler)
+    }
+}
+
+pluginManager.withPlugin("picsum.compose.multiplatform.library") {
+    dependencies {
+        add("androidMainImplementation", Androidx.hilt.lifecycle.viewmodel.compose)
     }
 }
