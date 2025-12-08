@@ -48,7 +48,7 @@ import coil3.request.crossfade
 import me.omico.picsum.data.model.GalleryImage
 
 @Composable
-fun GalleryUi(viewModel: GalleryViewModel) {
+internal fun GalleryUi(viewModel: GalleryViewModel) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
     val lazyPagingGalleryImages = viewModel.galleryImagePagingData.collectAsLazyPagingItems()
     GalleryUi(
@@ -59,7 +59,7 @@ fun GalleryUi(viewModel: GalleryViewModel) {
 }
 
 @Composable
-fun GalleryUi(
+private fun GalleryUi(
     uiState: GalleryUiState,
     lazyPagingGalleryImages: LazyPagingItems<GalleryImage>,
     modifier: Modifier = Modifier,
@@ -106,7 +106,7 @@ fun GalleryUi(
 }
 
 @Composable
-fun GalleryImageItem(
+private fun GalleryImageItem(
     image: GalleryImage,
     modifier: Modifier = Modifier,
 ) {
