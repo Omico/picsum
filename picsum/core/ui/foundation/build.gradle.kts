@@ -6,7 +6,6 @@ kotlin {
     sourceSets {
         commonMain {
             dependencies {
-                api(project(":picsum-androidx-paging-compose"))
                 implementation(project(":picsum-core-foundation"))
             }
             dependencies {
@@ -14,6 +13,7 @@ kotlin {
                 api(androidx.lifecycle.viewmodel.navigation3)
                 api(androidx.navigation3.runtime)
                 api(androidx.navigation3.ui)
+                api(androidx.paging.compose)
                 api(coil.compose)
                 api(compose.material3)
             }
