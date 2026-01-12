@@ -15,6 +15,7 @@ versions:
   kotlinx:
     coroutines: "1.10.2"
   ktor: "3.3.3"
+  metro: "0.9.4"
   okio: "3.16.4"
   plugins:
     develocity: "4.2.2"
@@ -31,6 +32,7 @@ repositories:
 plugins:
   gradlePluginPortal:
     com.gradle.develocity: ${versions.plugins.develocity}
+    dev.zacsweers.metro: ${versions.metro}
   mavenCentral:
     com.google.dagger.hilt.android: ${versions.hilt}
   noUpdates:
@@ -85,6 +87,16 @@ dependencies:
       okio:
         alias: okio
         version: ${versions.okio}
+    dev.zacsweers.metro:
+      metrox-android:
+        alias: metro.metrox.android
+        version: ${versions.metro}
+      metrox-viewmodel:
+        alias: metro.metrox.viewmodel
+        version: ${versions.metro}
+      metrox-viewmodel-compose:
+        alias: metro.metrox.viewmodel.compose
+        version: ${versions.metro}
     io.coil-kt.coil3:
       coil-compose:
         alias: coil.compose

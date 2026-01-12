@@ -10,7 +10,7 @@ kotlin {
                 api(project(":picsum-core-data-repository"))
             }
             dependencies {
-                implementation(project(":picsum-core-data-database"))
+                api(project(":picsum-core-data-database"))
             }
         }
     }

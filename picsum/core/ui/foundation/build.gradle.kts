@@ -1,5 +1,6 @@
 plugins {
     id("picsum.compose.multiplatform.library")
+    id("picsum.hilt")
 }
 
 kotlin {
@@ -16,6 +17,8 @@ kotlin {
                 api(androidx.paging.compose)
                 api(coil.compose)
                 api(compose.material3)
+                api(metro.metrox.viewmodel)
+                api(metro.metrox.viewmodel.compose)
             }
             dependencies {
                 implementation(coil.network.ktor)

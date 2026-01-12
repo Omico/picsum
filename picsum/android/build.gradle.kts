@@ -35,5 +35,6 @@ dependencies {
     implementation(androidx.core.splashScreen)
     implementation(delusion.logger)
     implementation(kotlinx.coroutines.android)
+    implementation(metro.metrox.android)
     debugImplementation(compose.uiTooling)
 }

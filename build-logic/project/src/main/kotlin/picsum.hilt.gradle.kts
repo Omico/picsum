@@ -6,6 +6,11 @@ import me.omico.kami.kotlin.dsl.onKotlinMultiplatformApplied
 plugins {
     id("me.omico.kami.kotlin.base")
     id("com.google.dagger.hilt.android")
+    id("dev.zacsweers.metro")
+}
+
+metro {
+    debug = true
 }
 
 kami {

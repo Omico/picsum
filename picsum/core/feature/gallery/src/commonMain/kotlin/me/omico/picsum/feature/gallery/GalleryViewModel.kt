@@ -1,11 +1,16 @@
 /*
- * Copyright 2025 Omico. All Rights Reserved.
+ * Copyright 2025-2026 Omico. All Rights Reserved.
  */
 package me.omico.picsum.feature.gallery
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
+import dev.zacsweers.metro.AppScope
+import dev.zacsweers.metro.ContributesIntoMap
+import dev.zacsweers.metro.Inject
+import dev.zacsweers.metro.binding
+import dev.zacsweers.metrox.viewmodel.ViewModelKey
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -17,11 +22,17 @@ import kotlinx.coroutines.flow.stateIn
 import me.omico.picsum.data.datasource.GalleryDataSource
 import me.omico.picsum.data.model.GalleryImage
 
-internal expect class GalleryViewModel(
+@Inject
+@ViewModelKey(GalleryViewModel::class)
+@ContributesIntoMap(
+    scope = AppScope::class,
+    binding = binding<ViewModel>(),
+)
+expect class GalleryViewModel(
     galleryDataSource: GalleryDataSource,
 ) : CommonGalleryViewModel
 
-internal abstract class CommonGalleryViewModel(
+abstract class CommonGalleryViewModel(
     private val galleryDataSource: GalleryDataSource,
 ) : ViewModel() {
     private val pagingPageSize: MutableStateFlow<Int> = MutableStateFlow(DEFAULT_PAGE_SIZE)
