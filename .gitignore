@@ -5,7 +5,8 @@
 build/
 local.properties
 
+!**/.idea/detekt.xml
+!**/.idea/externalDependencies.xml
+!**/.idea/jsonSchemas.xml
+!**/.idea/ktlint-plugin.xml
 !**/src/**/build/**
-!/.idea/detekt.xml
-!/.idea/externalDependencies.xml
-!/.idea/jsonSchemas.xml

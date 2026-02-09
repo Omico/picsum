@@ -1,8 +1,12 @@
 * text=auto eol=lf
 
+*.c text diff=c
+*.cc text diff=cpp
+*.cpp text diff=cpp
 *.gradle text diff=java
 *.gradle.kts text diff=kotlin
 *.groovy text diff=java
+*.h text diff=c
 *.htm text diff=html
 *.html text diff=html
 *.java text diff=java
@@ -13,14 +17,17 @@
 *.rs text diff=rust
 *.scala text diff=java
 *.svg text
+*.template text
 *.toml text diff=toml
-*.xml text
-*.yaml text
-*.yml text
+*.txt text
+*.xml text diff=xml
+*.yaml text diff=yaml
+*.yml text diff=yaml
 .gitattributes text
 .gitignore text
 .gitmodules text
 LICENSE text
+consumer-rules.pro text
 gradlew text
 package-lock.json text eol=lf -diff
 package.json text eol=lf
@@ -39,6 +46,7 @@ yarn.lock text -diff
 *.jks binary
 *.jpeg binary
 *.jpg binary
+*.keystore binary
 *.png binary
 *.so binary
 *.tif binary
